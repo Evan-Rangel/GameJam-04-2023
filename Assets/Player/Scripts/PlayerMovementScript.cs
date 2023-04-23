@@ -9,37 +9,41 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] float movementVelocity;
     [SerializeField] float gravityScale = 5;
     [SerializeField] float fallGravityScale = 15;
-
+    [SerializeField] float jumpTime;
     float jumpF;
     Vector2 movDir;
     Rigidbody2D rb;
     bool isJumping=false;
     bool canJump =true;
     float xDir;
-    
+    float jumpT;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInput>();
+        jumpT = jumpTime;
+        jumpF = jumpForce;
     }
     private void Update()
     {
         xDir = input.actions["Move"].ReadValue<Vector2>().x;
         rb.velocity = new Vector2(xDir*movementVelocity, rb.velocity.y);
-        //jumpForce=input.actions["Jump"].butt
-        if (input.actions["Jump"].IsPressed() && !isJumping && jumpF>0)
+
+
+        if (input.actions["Jump"].IsPressed() && !isJumping && jumpT > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpF);
-
-            jumpF -= Time.deltaTime*jumpForce;
+            if (jumpT< jumpTime/2)
+            {
+                jumpF -= Time.deltaTime * 2; 
+            }
+            jumpT -= Time.deltaTime;
             canJump = true;
-            //isJumping = true;
-            // rb.AddForce(Vector2.up * jumpF, ForceMode2D.Impulse);
+
             Debug.Log("Salto");
         }
-        else if(jumpF!=jumpForce)
+        else if (jumpT != jumpTime)
         {
-            jumpF = jumpForce;
             isJumping = true;
         }
         if (rb.velocity.y>0)
@@ -56,6 +60,8 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (collision.transform.CompareTag("Ground"))
         {
+            jumpF = jumpForce;
+            jumpT = jumpTime;
             isJumping = false;
             Debug.Log("Piso");
         }

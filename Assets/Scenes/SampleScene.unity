@@ -243,7 +243,8 @@ MonoBehaviour:
   jumpForce: 10
   movementVelocity: 4
   gravityScale: 4
-  fallGravityScale: 5
+  fallGravityScale: 4
+  jumpTime: 0.3
 --- !u!114 &397029595
 MonoBehaviour:
   m_ObjectHideFlags: 0
