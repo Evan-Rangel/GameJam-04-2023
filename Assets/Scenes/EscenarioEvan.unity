@@ -685,6 +685,12 @@ MonoBehaviour:
   vel: 2
   time: 0.5
   currentMovDir: 0
+  projectilesPerWave: 4
+  angleInit: 180
+  angleSum: 0
+  bulletSpeed: 2
+  bullet: {fileID: 4624398093183693953, guid: 3e74a3ec9bfdc154495ac3d79f38fae5, type: 3}
+  bulletCadence: 1.97
 --- !u!1 &1616912894
 GameObject:
   m_ObjectHideFlags: 0
