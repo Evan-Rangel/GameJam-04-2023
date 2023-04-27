@@ -47,7 +47,7 @@ public class ScenaryController : MonoBehaviour
         if (lerpRight)
         {
             transform.position = Vector3.Lerp(transform.position, rightPoint, Time.deltaTime * moveSpeed);
-            if (Vector2.Distance(transform.position, rightPoint) < 0.1f)
+            if (Vector2.Distance(transform.position, rightPoint) < 0.05f)
             {
                 lerpRight = false;
                 transform.position = centerPoint;
@@ -60,7 +60,7 @@ public class ScenaryController : MonoBehaviour
         if (lerpLeft)
         {
             transform.position = Vector3.Lerp(transform.position, leftPoint, Time.deltaTime * moveSpeed);
-            if (Vector2.Distance(transform.position, leftPoint) < 0.1f)
+            if (Vector2.Distance(transform.position, leftPoint) < 0.05f)
             {
                 lerpLeft = false;
                 transform.position = centerPoint;
