@@ -40,7 +40,6 @@ public class PlayerMovementScript : MonoBehaviour
             jumpT -= Time.deltaTime;
             canJump = true;
 
-            Debug.Log("Salto");
         }
         else if (jumpT != jumpTime)
         {
@@ -63,7 +62,6 @@ public class PlayerMovementScript : MonoBehaviour
             jumpF = jumpForce;
             jumpT = jumpTime;
             isJumping = false;
-            Debug.Log("Piso");
         }
     }
 }
