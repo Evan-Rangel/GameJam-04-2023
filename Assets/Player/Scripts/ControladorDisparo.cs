@@ -30,6 +30,8 @@ public class ControladorDisparo : MonoBehaviour
         armaDefault = true;
         armaEscopeta = false;
         armaBigCannon = false;
+        damage = 1;
+        multy = 1;
     }
 
     private void Update()
