@@ -7,6 +7,11 @@ public class ArmaRotation : MonoBehaviour
     private Vector3 objetivo;
     [SerializeField] private Camera camara;
 
+    private void Start()
+    {
+        camara = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
+
     private void Update()
     {
         objetivo = camara.ScreenToWorldPoint(Input.mousePosition);
