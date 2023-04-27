@@ -5,7 +5,7 @@ using static UnityEditor.Progress;
 
 public class Items : MonoBehaviour
 {
-    public Dictionary<string, float> items = new Dictionary<string, float>();
+    public Dictionary<string, int> items = new Dictionary<string, int>();
     // Start is called before the first frame update
     void Start()
     {
