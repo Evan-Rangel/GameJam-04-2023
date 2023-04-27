@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee26143cf06d9e498e28e47b750b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canUse: 1
+  canUse: 0
   otherDoor: {fileID: 1616912894}
   doorType: 1
 --- !u!1 &801682753
@@ -394,6 +394,7 @@ MonoBehaviour:
   - {fileID: 932079818998776763, guid: 4aa85bc1bc3bfd64eb17ab760e4d9683, type: 3}
   shopRoom: {fileID: 0}
   boosRoom: {fileID: 0}
+  tutorialRoom: {fileID: 0}
   currentCenterRoom: {fileID: 0}
   currentRightRoom: {fileID: 0}
   currentLefttRoom: {fileID: 0}
@@ -684,6 +685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee26143cf06d9e498e28e47b750b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canUse: 1
+  canUse: 0
   otherDoor: {fileID: 761910129}
   doorType: 0

@@ -7,6 +7,7 @@ public class ScenaryController : MonoBehaviour
     [SerializeField]List <GameObject> rooms;
     [SerializeField] GameObject shopRoom;
     [SerializeField] GameObject boosRoom;
+    [SerializeField] GameObject tutorialRoom;
 
     [SerializeField] GameObject currentCenterRoom;
     [SerializeField] GameObject currentRightRoom;
