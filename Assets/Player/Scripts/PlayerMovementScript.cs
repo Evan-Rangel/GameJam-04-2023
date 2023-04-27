@@ -22,6 +22,17 @@ public class PlayerMovementScript : MonoBehaviour
     bool canJump =true;
     float xDir;
     float jumpT;
+
+    bool canMove=true;
+
+    public void SetCanMove(bool _canMove)
+    {
+        canMove = _canMove;
+    }
+
+    public bool GetCanMove { get { return canMove; } }
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,32 +44,37 @@ public class PlayerMovementScript : MonoBehaviour
     }
     private void Update()
     {
-        xDir = input.actions["Move"].ReadValue<Vector2>().x;
-        rb.velocity = new Vector2(xDir*movementVelocity, rb.velocity.y);
 
-
-        if (input.actions["Jump"].IsPressed() && !isJumping && jumpT > 0)
+        if (canMove)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpF);
-            if (jumpT< jumpTime/2)
+
+            xDir = input.actions["Move"].ReadValue<Vector2>().x;
+            rb.velocity = new Vector2(xDir*movementVelocity, rb.velocity.y);
+
+
+            if (input.actions["Jump"].IsPressed() && !isJumping && jumpT > 0)
             {
-                jumpF -= Time.deltaTime * 2; 
-            }
-            jumpT -= Time.deltaTime;
-            canJump = true;
+                rb.velocity = new Vector2(rb.velocity.x, jumpF);
+                if (jumpT< jumpTime/2)
+                {
+                    jumpF -= Time.deltaTime * 2; 
+                }
+                jumpT -= Time.deltaTime;
+                canJump = true;
 
-        }
-        else if (jumpT != jumpTime)
-        {
-            isJumping = true;
-        }
-        if (rb.velocity.y>0)
-        {
-            rb.gravityScale = gravityScale;
-        }
-        else
-        {
-            rb.gravityScale = fallGravityScale;
+            }
+            else if (jumpT != jumpTime)
+            {
+                isJumping = true;
+            }
+            if (rb.velocity.y>0)
+            {
+                rb.gravityScale = gravityScale;
+            }
+            else
+            {
+                rb.gravityScale = fallGravityScale;
+            }
         }
     }
 

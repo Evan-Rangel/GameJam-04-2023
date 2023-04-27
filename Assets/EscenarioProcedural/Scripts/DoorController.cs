@@ -25,8 +25,18 @@ public class DoorController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player") && canUse)
         {
+            //canUse = false;
             collision.transform.position = otherDoor.transform.position;
-            ScenaryController.instance.NextRoom(doorType);
+            StartCoroutine(MovePlayer(collision.gameObject));
+            ScenaryController.instance.NextRoom(doorType, otherDoor.transform.position);
         }
+    }
+
+    IEnumerator MovePlayer(GameObject _player)
+    {
+        _player.GetComponent<PlayerMovementScript>().SetCanMove(false);
+        yield return new WaitForSeconds(0.8F);
+        _player.GetComponent<PlayerMovementScript>().SetCanMove(true);
+
     }
 }

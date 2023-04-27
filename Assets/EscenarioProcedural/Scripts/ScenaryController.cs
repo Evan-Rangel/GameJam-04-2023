@@ -11,7 +11,7 @@ public class ScenaryController : MonoBehaviour
 
     [SerializeField] GameObject currentCenterRoom;
     [SerializeField] GameObject currentRightRoom;
-    [SerializeField] GameObject currentLefttRoom;
+    [SerializeField] GameObject currentLeftRoom;
 
     [SerializeField] Vector2 centerPoint;
     [SerializeField] Vector2 rightPoint;
@@ -29,18 +29,17 @@ public class ScenaryController : MonoBehaviour
         {
             instance = this;
         }
-        
     }
 
     private void Start()
     {
 
         randomRoomArrPos = Random.Range(0, rooms.Count);
-        currentCenterRoom= Instantiate(rooms[randomRoomArrPos], centerPoint, Quaternion.identity, transform);
+        currentCenterRoom= Instantiate(rooms[0], centerPoint, Quaternion.identity, transform);
+        /*randomRoomArrPos = Random.Range(0, rooms.Count);
+        currentRightRoom = Instantiate(rooms[1], rightPoint, Quaternion.identity, transform);
         randomRoomArrPos = Random.Range(0, rooms.Count);
-        currentRightRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
-        randomRoomArrPos = Random.Range(0, rooms.Count);
-        currentLefttRoom =  Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+        currentLeftRoom =  Instantiate(rooms[2], leftPoint, Quaternion.identity, transform);*/
     }
 
     private void Update()
@@ -50,21 +49,12 @@ public class ScenaryController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, rightPoint, Time.deltaTime * moveSpeed);
             if (Vector2.Distance(transform.position, rightPoint) < 0.1f)
             {
-                transform.position = rightPoint;
                 lerpRight = false;
                 transform.position = centerPoint;
 
-                currentRightRoom.transform.position = currentCenterRoom.transform.position;
+                currentRightRoom.transform.position = centerPoint;
                 Destroy(currentCenterRoom);
-                Destroy(currentLefttRoom);
                 currentCenterRoom = currentRightRoom;
-
-                randomRoomArrPos = Random.Range(0, rooms.Count);
-                currentRightRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
-
-                randomRoomArrPos = Random.Range(0, rooms.Count);
-                currentLefttRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
-
             }
         }
         if (lerpLeft)
@@ -72,38 +62,43 @@ public class ScenaryController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, leftPoint, Time.deltaTime * moveSpeed);
             if (Vector2.Distance(transform.position, leftPoint) < 0.1f)
             {
-                transform.position = leftPoint;
                 lerpLeft = false;
                 transform.position = centerPoint;
 
-                currentLefttRoom.transform.position = currentCenterRoom.transform.position;
+                currentLeftRoom.transform.position = centerPoint;
                 Destroy(currentCenterRoom);
-                Destroy(currentRightRoom);
-                currentCenterRoom = currentLefttRoom;
-
-                randomRoomArrPos = Random.Range(0, rooms.Count);
-                currentRightRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
-
-                randomRoomArrPos = Random.Range(0, rooms.Count);
-                currentLefttRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+                currentCenterRoom = currentLeftRoom;
             }
         }
     }
 
-
-    public void NextRoom(DoorController.DoorType _doorType)
+    public void NextRoom(DoorController.DoorType _doorType, Vector2 _target)
     {
         switch (_doorType)
         {
             case DoorController.DoorType.LeftDoor:
+                randomRoomArrPos = Random.Range(0, rooms.Count);
+
+                currentLeftRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
                 lerpLeft = true;
+                //StartCoroutine(TeleportPlayer(_target));
                 break;
             case DoorController.DoorType.RightDoor:
+                randomRoomArrPos = Random.Range(0, rooms.Count);
+
+                currentRightRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
                 lerpRight = true;
+                //StartCoroutine(TeleportPlayer(_target));
                 break;
         }
     }
-    
+    IEnumerator TeleportPlayer(Vector2 _target)
+    {
+        yield return new WaitForSeconds(1);
+        GameObject.FindGameObjectWithTag("Player").transform.position = _target;
+    }
+
+
     void SetRooms()
     {
         
@@ -120,6 +115,5 @@ public class ScenaryController : MonoBehaviour
             Gizmos.DrawCube(leftPoint, new Vector2(18, 10));
 
         }
-
     }
 }
