@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ScenaryController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject[] scenarys;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] Transform rightPoint;
+    [SerializeField] Transform leftPoint;
+
+    int scenaryCount = 0;
+
+
+
+
+
+
+
+
+
 }
