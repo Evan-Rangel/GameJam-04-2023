@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] PlayerInput input;
+    public int maxHealth = 10;
+    public int currentHealth = 3;
     [SerializeField] float jumpForce;
-    [SerializeField] float movementVelocity;
+    public float movementVelocity; //Movi esto Evan a public
     [SerializeField] float gravityScale = 5;
     [SerializeField] float fallGravityScale = 15;
     [SerializeField] float jumpTime;
@@ -21,6 +23,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInput>();
+        //currentHealth = maxHealth;
         jumpT = jumpTime;
         jumpF = jumpForce;
     }
@@ -62,6 +65,18 @@ public class PlayerMovementScript : MonoBehaviour
             jumpF = jumpForce;
             jumpT = jumpTime;
             isJumping = false;
+        }
+    }
+    //Funcion pa recibir daño llamala y ponle cuanto quieres que se baje
+    void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+        {
+            //Moriste proo
+            //Play Death animation
+            //Show GameOver Screen
         }
     }
 }
