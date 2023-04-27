@@ -10,10 +10,10 @@ public class PowerUp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //Si lo toca lo destruya
-            Destroy(gameObject);
             //Aplica el efecto dependiendo que ScripObj se le ponga en el inspector
             powerupEffect.Apply(collision.gameObject);
+            //Si lo toca lo destruya
+            Destroy(gameObject);           
         }       
     }
 }

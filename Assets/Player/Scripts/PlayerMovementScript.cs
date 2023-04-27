@@ -5,8 +5,11 @@ using UnityEngine.InputSystem;
 public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] PlayerInput input;
+    //Vida
     public int maxHealth = 10;
     public int currentHealth = 3;
+    //Escudo
+    public bool shield;
     [SerializeField] float jumpForce;
     public float movementVelocity; //Movi esto Evan a public
     [SerializeField] float gravityScale = 5;
@@ -24,6 +27,7 @@ public class PlayerMovementScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInput>();
         //currentHealth = maxHealth;
+        shield = false;
         jumpT = jumpTime;
         jumpF = jumpForce;
     }
@@ -70,8 +74,15 @@ public class PlayerMovementScript : MonoBehaviour
     //Funcion pa recibir daño llamala y ponle cuanto quieres que se baje
     void TakeDamage(int amount)
     {
-        currentHealth -= amount;
-
+        //Si el escudo esta activo no recibe daño y se apaga
+        if (shield == true)
+        {
+            shield = false;
+        }
+        else
+        {
+            currentHealth -= amount;
+        }
         if (currentHealth <= 0)
         {
             //Moriste proo
