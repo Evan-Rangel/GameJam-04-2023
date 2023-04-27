@@ -27,16 +27,16 @@ public class DoorController : MonoBehaviour
         {
             //canUse = false;
             collision.transform.position = otherDoor.transform.position;
-            //StartCoroutine(Disable_Enable_Collider());
+            StartCoroutine(MovePlayer(collision.gameObject));
             ScenaryController.instance.NextRoom(doorType, otherDoor.transform.position);
         }
     }
 
-    IEnumerator Disable_Enable_Collider()
+    IEnumerator MovePlayer(GameObject _player)
     {
-        gameObject.GetComponent<Collider2D>().enabled = false;
-        yield return new WaitForSeconds(1);
-        gameObject.GetComponent<Collider2D>().enabled = true;
+        _player.GetComponent<PlayerMovementScript>().SetCanMove(false);
+        yield return new WaitForSeconds(0.8F);
+        _player.GetComponent<PlayerMovementScript>().SetCanMove(true);
 
     }
 }
