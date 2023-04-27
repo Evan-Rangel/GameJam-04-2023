@@ -8,16 +8,20 @@ public class DisparoMochila : MonoBehaviour
 
     [SerializeField] private float daño;
 
+    private void Start()
+    {
+        //gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * velocidad;
+    }
+
     private void Update()
     {
         transform.Translate(Vector2.up * velocidad * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Enemigo"))
+        if (collision.CompareTag("Limites"))
         {
-            //other.GetComponent<Enemigo>().TomarDaño(daño);
             Destroy(gameObject);
         }
     }

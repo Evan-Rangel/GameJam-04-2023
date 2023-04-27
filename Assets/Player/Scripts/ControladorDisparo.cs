@@ -20,5 +20,7 @@ public class ControladorDisparo : MonoBehaviour
     private void Disparar()
     {
         Instantiate(bala, controladorDisparo.position, controladorDisparo.rotation);
+        //GameObject disparo = Instantiate(bala, controladorDisparo.position, controladorDisparo.rotation);
+        //disparo.GetComponent<Rigidbody2D>().AddForce(Vector2.up);
     }
 }

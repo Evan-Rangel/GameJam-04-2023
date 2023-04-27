@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controladorDisparo: {fileID: 9010174946831583735}
-  bala: {fileID: 114023710765022496, guid: 0d7b8a03760022245a40496aa73b55db, type: 3}
+  bala: {fileID: 2830679860960189859, guid: 94e6c12adf1289548946ffce04af1b07, type: 3}
 --- !u!1 &2090191620485423086
 GameObject:
   m_ObjectHideFlags: 0
