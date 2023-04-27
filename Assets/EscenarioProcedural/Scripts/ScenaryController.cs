@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class ScenaryController : MonoBehaviour
 {
-    [SerializeField] GameObject[] scenarys;
+    [SerializeField]List <GameObject> rooms;
+    [SerializeField] GameObject shopRoom;
+    [SerializeField] GameObject boosRoom;
 
+    [SerializeField] Transform centerPoint;
     [SerializeField] Transform rightPoint;
     [SerializeField] Transform leftPoint;
 
-    int scenaryCount = 0;
 
+    private void Start()
+    {
+        
+    }
+
+
+
+    void NextRoom()
+    {
+        int randomRoomArrPos= Random.Range(0, rooms.Count);
+
+        GameObject room = Instantiate(rooms[randomRoomArrPos], centerPoint.transform.position, Quaternion.identity);
+
+        //activar funcion de room para los enemigos.
+
+
+    }
 
 
 
