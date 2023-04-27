@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b19aa0cc9a4634746831fd7a4e18280a, type: 3}
-  m_Name: ShieldItem
+  m_Script: {fileID: 11500000, guid: 4ac760f6ad8e8b6498d6450cf52abb61, type: 3}
+  m_Name: BigCannonItem
   m_EditorClassIdentifier: 
-  activate: 1
+  activate: 0

@@ -140,10 +140,16 @@ MonoBehaviour:
   - {fileID: 9010174946831583735}
   - {fileID: 3980121432156221542}
   - {fileID: 2667842744740707801}
-  bala: {fileID: 2830679860960189859, guid: 94e6c12adf1289548946ffce04af1b07, type: 3}
+  bala:
+  - {fileID: 2830679860960189859, guid: 94e6c12adf1289548946ffce04af1b07, type: 3}
+  - {fileID: 2830679860960189859, guid: 9cb2a3983bcbe004e8fdce0b7cd3d4d2, type: 3}
+  - {fileID: 2830679860960189859, guid: a179544467d33884aa78cc0911b4e72c, type: 3}
   armaDefault: 0
   armaEscopeta: 0
   armaBigCannon: 0
+  shooting: 0
+  carga: 0
+  etapa: 0
 --- !u!1 &1359538048888464098
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4879cc9c2dbf6aa47a8078dc181ca845, type: 3}
   m_Name: ShotGunItem
   m_EditorClassIdentifier: 
-  activate: 0
+  activate: 1
