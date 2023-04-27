@@ -49,24 +49,29 @@ public class ControladorDisparo : MonoBehaviour
 
     private void CargarDisparo()
     {
+        GameObject bullet;
         if (playerinput.actions["Fire"].IsPressed())
         {
             shooting = true;
             carga += 1 * Time.deltaTime;
         }
-        if (carga >= 1)
-        {
-            carga = 0;
-            if (etapa <= 1)
-            {
-                etapa += 1;
-            }
-        }
+        
         if (!playerinput.actions["Fire"].IsPressed() && shooting)
         {
-            GameObject bullet;
+            if (carga >= 1 && carga < 2)
+            {
+                etapa = 1;
+            }
+            if (carga >= 2)
+            {
+                etapa = 2;
+            }
             switch (etapa)
             {
+                case 0:
+                    bullet = Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                    bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
+                    break;
                 case 1:
                     bullet = Instantiate(bala[1], controladorDisparo[0].position, controladorDisparo[0].rotation);
                     bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
