@@ -30,12 +30,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float time;
     [SerializeField] int currentMovDir = 0;
 
-    [SerializeField, Range(1,30)] int projectilesPerWave;
-    [SerializeField, Range(0,360)] int angleInit;
-    [SerializeField, Range(0, 100)] int angleSum;
-    [SerializeField, Range(0, 20)] int bulletSpeed;
+    [SerializeField, Range(1, 30)] int projectilesPerWave;
+    [SerializeField, Range(0, 360)] int angleInit;
+    [SerializeField, Range(-100, 100)] int angleSum;
+    [SerializeField, Range(0, 20)] float bulletSpeed;
     [SerializeField] GameObject bullet;
-    [SerializeField, Range(0, 10)] float bulletCadence;  
+    [SerializeField, Range(0, 2)] float bulletCadence;
+    [SerializeField] int bulletDamage;
+    [SerializeField] int health;
     Rigidbody2D rb;
     Vector2[] directions= 
     { 
@@ -99,6 +101,8 @@ public class EnemyController : MonoBehaviour
     {
 
         yield return new WaitForSeconds(bulletCadence);
+        
+        angleInit += angleSum;
         Attack();
     }
 
@@ -115,4 +119,19 @@ public class EnemyController : MonoBehaviour
         }
         Movement();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("PlayerBullet"))
+        {
+            Debug.Log(collision.gameObject.GetComponent<DisparoMochila>().GetDamage);
+            health -= collision.gameObject.GetComponent<DisparoMochila>().GetDamage;
+
+            if (health<=0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+
 }

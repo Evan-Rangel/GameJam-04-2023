@@ -10,6 +10,9 @@ public class DisparoMochila : MonoBehaviour
 
     public int multy;
 
+    public int GetDamage { get { return damage; } }
+
+
     private void Start()
     {
         //gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * velocidad;

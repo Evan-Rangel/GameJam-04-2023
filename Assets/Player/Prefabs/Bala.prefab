@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1498847523676692138}
   m_Layer: 0
   m_Name: Bala
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,4 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 20
-  "da\xF1o": 1
+  damage: 0
+  multy: 0
