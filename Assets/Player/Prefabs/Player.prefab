@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1777896362539815212}
   - component: {fileID: 635441342023565358}
   - component: {fileID: 2034233490294178397}
+  - component: {fileID: 4036317863675880417}
   m_Layer: 0
   m_Name: "Mochila Ca\xF1on"
   m_TagString: Untagged
@@ -144,12 +145,45 @@ MonoBehaviour:
   - {fileID: 2830679860960189859, guid: 94e6c12adf1289548946ffce04af1b07, type: 3}
   - {fileID: 2830679860960189859, guid: 9cb2a3983bcbe004e8fdce0b7cd3d4d2, type: 3}
   - {fileID: 2830679860960189859, guid: a179544467d33884aa78cc0911b4e72c, type: 3}
+  playerinput: {fileID: 0}
   armaDefault: 0
   armaEscopeta: 0
   armaBigCannon: 0
   shooting: 0
   carga: 0
   etapa: 0
+  damage: 0
+  multy: 0
+--- !u!114 &4036317863675880417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608151331778251600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b57858121e7372048b891ce3b5a77260, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1359538048888464098
 GameObject:
   m_ObjectHideFlags: 0
