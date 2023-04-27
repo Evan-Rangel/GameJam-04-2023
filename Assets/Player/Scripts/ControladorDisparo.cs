@@ -20,6 +20,9 @@ public class ControladorDisparo : MonoBehaviour
     public float carga;
     public int etapa;
 
+    public int damage;
+    public int multy;
+
     private void Start()
     {
         playerinput = GetComponent<PlayerInput>();
@@ -59,15 +62,16 @@ public class ControladorDisparo : MonoBehaviour
         }
         if (!playerinput.actions["Fire"].IsPressed() && shooting)
         {
+            GameObject bullet;
             switch (etapa)
             {
                 case 1:
-                    Instantiate(bala[1], controladorDisparo[0].position, controladorDisparo[0].rotation);
-
+                    bullet = Instantiate(bala[1], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                    bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
                     break;
                 case 2:
-                    Instantiate(bala[2], controladorDisparo[0].position, controladorDisparo[0].rotation);
-
+                    bullet = Instantiate(bala[2], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                    bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
                     break;
             }
             carga = 0;
@@ -80,11 +84,14 @@ public class ControladorDisparo : MonoBehaviour
     {
         if (playerinput.actions["Fire"].WasPressedThisFrame())
         {
+            GameObject bullet;
             if (armaDefault == true)
             {
+
                 armaEscopeta = false;
                 armaBigCannon = false;
-                Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                bullet = Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
                 if (!shooting)//If para animacione slo puedes cambiar
                 {
                     shooting = true;
@@ -94,9 +101,13 @@ public class ControladorDisparo : MonoBehaviour
             {
                 armaDefault = false;
                 armaBigCannon = false;
-                Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
-                Instantiate(bala[0], controladorDisparo[1].position, controladorDisparo[1].rotation);
-                Instantiate(bala[0], controladorDisparo[2].position, controladorDisparo[2].rotation);
+                
+                bullet = Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
+                bullet = Instantiate(bala[0], controladorDisparo[1].position, controladorDisparo[1].rotation);
+                bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
+                bullet = Instantiate(bala[0], controladorDisparo[2].position, controladorDisparo[2].rotation);
+                bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
                 if (!shooting)//If para animacione slo puedes cambiar
                 {
                     shooting = true;
@@ -104,13 +115,17 @@ public class ControladorDisparo : MonoBehaviour
             }
             
         }
-        if (shooting)
-        {
-            //aqui se activa el animator
-        }
         
         
         //GameObject disparo = Instantiate(bala, controladorDisparo.position, controladorDisparo.rotation);
         //disparo.GetComponent<Rigidbody2D>().AddForce(Vector2.up);
+    }
+
+    public void bulletDamage(int _damage, int _multy)
+    {
+        damage = _damage;
+        multy = _multy;
+
+        damage = damage * multy;
     }
 }

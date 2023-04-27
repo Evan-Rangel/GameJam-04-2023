@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Powerups/DamageBuff")]
+public class DamageBuff : PowerUpsEffects
+{
+    //Cantidad que aumentara
+    public int damage;
+    public int multiplicador;
+    public override void Apply(GameObject target)
+    {
+        //Buscamos el script de la variable que queremos modificar, tomamos la variable y sumamos o restamos dependiendo que queremos hacer (Esto para este tipo de items)
+        target.GetComponentInChildren<ControladorDisparo>().bulletDamage(damage, multiplicador);
+    }
+}

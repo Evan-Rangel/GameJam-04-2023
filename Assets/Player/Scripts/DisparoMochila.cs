@@ -6,7 +6,9 @@ public class DisparoMochila : MonoBehaviour
 {
     [SerializeField] private float velocidad;
 
-    [SerializeField] private float daño;
+    [SerializeField] private int damage;
+
+    public int multy;
 
     private void Start()
     {
@@ -24,5 +26,11 @@ public class DisparoMochila : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void setDamage(int _damage, int _multy)
+    {
+        damage = _damage;
+        multy = _multy;
     }
 }
