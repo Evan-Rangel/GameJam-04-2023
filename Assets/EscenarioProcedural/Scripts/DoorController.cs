@@ -25,8 +25,18 @@ public class DoorController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player") && canUse)
         {
+            //canUse = false;
             collision.transform.position = otherDoor.transform.position;
-            ScenaryController.instance.NextRoom(doorType);
+            //StartCoroutine(Disable_Enable_Collider());
+            ScenaryController.instance.NextRoom(doorType, otherDoor.transform.position);
         }
+    }
+
+    IEnumerator Disable_Enable_Collider()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<Collider2D>().enabled = true;
+
     }
 }

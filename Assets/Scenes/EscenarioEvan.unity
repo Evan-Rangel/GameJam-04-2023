@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee26143cf06d9e498e28e47b750b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canUse: 0
+  canUse: 1
   otherDoor: {fileID: 1616912894}
   doorType: 1
 --- !u!1 &801682753
@@ -392,17 +392,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rooms:
   - {fileID: 932079818998776763, guid: 4aa85bc1bc3bfd64eb17ab760e4d9683, type: 3}
+  - {fileID: 3167172532191968787, guid: 7bb12c240646f934bb10ff7900c65184, type: 3}
+  - {fileID: 977673235330410032, guid: 638231d0aa36fee48898a156c99e021e, type: 3}
+  - {fileID: 1450463494749370185, guid: 0867f55601e61d8448e4f1a8ac998457, type: 3}
+  - {fileID: 3143391818428131385, guid: 6190ab6146c71994086ded14b943724d, type: 3}
+  - {fileID: 5988847881864829924, guid: 656518ba9cd0b9f4291484e0db941e08, type: 3}
+  - {fileID: 4969158442187330464, guid: 5044a087273bd3147a16c4bec11ab9be, type: 3}
+  - {fileID: 9199881537438857898, guid: 89842b0218a6b5947a01b1246e42d9fc, type: 3}
   shopRoom: {fileID: 0}
   boosRoom: {fileID: 0}
   tutorialRoom: {fileID: 0}
   currentCenterRoom: {fileID: 0}
   currentRightRoom: {fileID: 0}
-  currentLefttRoom: {fileID: 0}
+  currentLeftRoom: {fileID: 0}
   centerPoint: {x: 0, y: 0}
   rightPoint: {x: -19, y: 0}
   leftPoint: {x: 19, y: 0}
   showGizmos: 0
-  moveSpeed: 5
+  moveSpeed: 8
 --- !u!4 &863032887
 Transform:
   m_ObjectHideFlags: 0
@@ -685,6 +692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee26143cf06d9e498e28e47b750b588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canUse: 0
+  canUse: 1
   otherDoor: {fileID: 761910129}
   doorType: 0
