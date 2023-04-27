@@ -9,6 +9,7 @@ public class Items : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Agregar items al diccionario
         items.Add("Torpe2", 40);
         items.Add("Manzana", 5);
         items.Add("Lanza Webos", 30);
