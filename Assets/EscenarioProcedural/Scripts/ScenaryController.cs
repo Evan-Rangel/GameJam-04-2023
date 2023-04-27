@@ -8,40 +8,117 @@ public class ScenaryController : MonoBehaviour
     [SerializeField] GameObject shopRoom;
     [SerializeField] GameObject boosRoom;
 
-    [SerializeField] GameObject leftDoor;
-    [SerializeField] GameObject rightDoor;
+    [SerializeField] GameObject currentCenterRoom;
+    [SerializeField] GameObject currentRightRoom;
+    [SerializeField] GameObject currentLefttRoom;
 
     [SerializeField] Vector2 centerPoint;
     [SerializeField] Vector2 rightPoint;
     [SerializeField] Vector2 leftPoint;
 
+    [SerializeField] bool showGizmos=false;
+    public static ScenaryController instance;
+    bool lerpRight;
+    bool lerpLeft;
+    [SerializeField]float moveSpeed;
+    int randomRoomArrPos;
+    private void Awake()
+    {
+        if (instance==null)
+        {
+            instance = this;
+        }
+        
+    }
 
     private void Start()
     {
-         
+
+        randomRoomArrPos = Random.Range(0, rooms.Count);
+        currentCenterRoom= Instantiate(rooms[randomRoomArrPos], centerPoint, Quaternion.identity, transform);
+        randomRoomArrPos = Random.Range(0, rooms.Count);
+        currentRightRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
+        randomRoomArrPos = Random.Range(0, rooms.Count);
+        currentLefttRoom =  Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
     }
 
-
-
-    void NextRoom()
+    private void Update()
     {
-        int randomRoomArrPos= Random.Range(0, rooms.Count);
-        GameObject room = Instantiate(rooms[randomRoomArrPos], centerPoint, Quaternion.identity);
-        randomRoomArrPos = Random.Range(0, rooms.Count);
-        GameObject rightRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity);
-        randomRoomArrPos = Random.Range(0, rooms.Count);
-        GameObject leftRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity);
+        if (lerpRight)
+        {
+            transform.position = Vector3.Lerp(transform.position, rightPoint, Time.deltaTime * moveSpeed);
+            if (Vector2.Distance(transform.position, rightPoint) < 0.1f)
+            {
+                transform.position = rightPoint;
+                lerpRight = false;
+                transform.position = centerPoint;
 
+                currentRightRoom.transform.position = currentCenterRoom.transform.position;
+                Destroy(currentCenterRoom);
+                Destroy(currentLefttRoom);
+                currentCenterRoom = currentRightRoom;
 
-        //activar funcion de room para los enemigos.
+                randomRoomArrPos = Random.Range(0, rooms.Count);
+                currentRightRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
 
+                randomRoomArrPos = Random.Range(0, rooms.Count);
+                currentLefttRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+
+            }
+        }
+        if (lerpLeft)
+        {
+            transform.position = Vector3.Lerp(transform.position, leftPoint, Time.deltaTime * moveSpeed);
+            if (Vector2.Distance(transform.position, leftPoint) < 0.1f)
+            {
+                transform.position = leftPoint;
+                lerpLeft = false;
+                transform.position = centerPoint;
+
+                currentLefttRoom.transform.position = currentCenterRoom.transform.position;
+                Destroy(currentCenterRoom);
+                Destroy(currentRightRoom);
+                currentCenterRoom = currentLefttRoom;
+
+                randomRoomArrPos = Random.Range(0, rooms.Count);
+                currentRightRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
+
+                randomRoomArrPos = Random.Range(0, rooms.Count);
+                currentLefttRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+            }
+        }
     }
+
+
+    public void NextRoom(DoorController.DoorType _doorType)
+    {
+        switch (_doorType)
+        {
+            case DoorController.DoorType.LeftDoor:
+                lerpLeft = true;
+                break;
+            case DoorController.DoorType.RightDoor:
+                lerpRight = true;
+                break;
+        }
+    }
+    
+    void SetRooms()
+    {
+        
+    }
+
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawCube(centerPoint, new Vector2(18,10));
-        Gizmos.DrawCube(rightPoint, new Vector2(18, 10));
-        Gizmos.DrawCube(leftPoint, new Vector2(18, 10));
+        if (showGizmos)
+        {
+            Gizmos.DrawCube(centerPoint, new Vector2(18,10));
+            Gizmos.DrawCube(rightPoint, new Vector2(18, 10));
+            Gizmos.DrawCube(leftPoint, new Vector2(18, 10));
+
+        }
+
     }
 }
