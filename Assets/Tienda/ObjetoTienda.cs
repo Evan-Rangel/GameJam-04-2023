@@ -9,6 +9,8 @@ public class ObjetoTienda : MonoBehaviour
 {
     //Referencia al script con los items
     public Items thisItem;
+    public AudioClip onItem;
+    public AudioClip pickUpItem;
 
     private float price;
     public string nombre;
@@ -36,9 +38,9 @@ public class ObjetoTienda : MonoBehaviour
     public void ComprobarExistencia()
     {
         //Recorre todo el diccionario
-        foreach (KeyValuePair<string, float> item in thisItem.items)
+        foreach (KeyValuePair<string, int> item in thisItem.items)
         {
-            Debug.Log("Nombre: " + item.Key + "\nPrecio: " + item.Value);
+            //Debug.Log("Nombre: " + item.Key + "\nPrecio: " + item.Value);
             //Si el nombre coincide con alguno del dicionario entonces...
             if (nombre == item.Key)
             {
@@ -50,13 +52,16 @@ public class ObjetoTienda : MonoBehaviour
                 break;
             }
         }
+        //Destroy(gameObject);
         Debug.Log("Inexistente");
     }
 
-    public void Comprar(float monedas, Dictionary<string, float> playerItems)
+    public void Comprar(float monedas, Dictionary<string, float> playerItems, AudioSource sonidoPlayer)
     {
+        //AudioSource audio = GetComponent<AudioSource>();
+        sonidoPlayer.PlayOneShot(pickUpItem);
         //comprueba que el player tenga dinero suficiente
-        if(monedas >= price)
+        if (monedas >= price)
         {
             //Resta el dinero que cuesta al player
             QuitarDinero(playerItems, monedas);
@@ -89,10 +94,10 @@ public class ObjetoTienda : MonoBehaviour
         playerItems["Coins"] = resultado;
 
         //Debug
-        foreach (KeyValuePair<string, float> item in playerItems)
+        /*foreach (KeyValuePair<string, float> item in playerItems)
         {
             Debug.Log("Nombre: " + item.Key + "\nCantidad Disponible: " + item.Value);
-        }
+        }*/
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -103,6 +108,8 @@ public class ObjetoTienda : MonoBehaviour
             //Debug.Log(collision.tag);
             //se escala un poco mas el item
             transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.PlayOneShot(onItem);
         }
     }
 
@@ -110,5 +117,7 @@ public class ObjetoTienda : MonoBehaviour
     {
         //Regresa a su escala inicial cuando el jugador no esta sobre el item
         transform.localScale = new Vector3(1, 1, 1);
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Stop();
     }
 }
