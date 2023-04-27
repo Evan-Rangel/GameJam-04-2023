@@ -53,10 +53,6 @@ public class ObjetoTienda : MonoBehaviour
             Debug.Log(collision.tag);
             //se escala un poco mas el item
             transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                //Comprobar que el jugador tenga dinero para comprar el item
-            }
         }
     }
 
