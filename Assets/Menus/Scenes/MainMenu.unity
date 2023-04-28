@@ -441,6 +441,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1622105230995077785, guid: f9b86df2e5b6bde4786780f3f17f5b68, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1622105232459029681, guid: f9b86df2e5b6bde4786780f3f17f5b68, type: 3}
       propertyPath: m_Name
       value: CanvasMenu
