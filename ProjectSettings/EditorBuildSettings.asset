@@ -9,21 +9,6 @@ EditorBuildSettings:
     path: Assets/Menus/Scenes/MenuPrincipal.unity
     guid: ee0279737a9ee7c46a665cb5ec4c77a8
   - enabled: 1
-    path: Assets/Scenes/SceneStore.unity
-    guid: e0d3aeadeb6a40044933499107770f4a
-  - enabled: 1
-    path: Assets/Menus/Scenes/caca/PauseMenu.unity
-    guid: 7b3943b3535f0ab479fe234ecf1ae19a
-  - enabled: 1
-    path: Assets/Menus/Scenes/Defeat.unity
-    guid: 49365517e9649c84786fc0a9f413ad9f
-  - enabled: 0
-    path: Assets/Menus/Scenes/Victory!.unity
-    guid: f9d50cb9fab9c3c4ba6fe69f583a1530
-  - enabled: 0
-    path: Assets/Menus/Scenes/caca/MainMenu.unity
-    guid: 3f6944502e0c938488ebffdfd711921b
-  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 7db039036dd076748906873465b18783
   - enabled: 1
