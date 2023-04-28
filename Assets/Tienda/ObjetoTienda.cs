@@ -11,6 +11,7 @@ public class ObjetoTienda : MonoBehaviour
     public Items thisItem;
     public AudioClip onItem;
     public AudioClip pickUpItem;
+    public AudioClip errorItem;
 
     private float price;
     public string nombre;
@@ -84,6 +85,11 @@ public class ObjetoTienda : MonoBehaviour
         {
             Debug.Log("Nombre: " + item.Key + "\nPrecio: " + item.Value);
         }
+    }
+
+    public void ErrorItem(AudioSource sonidoPlayer)
+    {
+        sonidoPlayer.PlayOneShot(errorItem);
     }
 
     public void QuitarDinero(Dictionary<string, float> playerItems, float monedas) 
