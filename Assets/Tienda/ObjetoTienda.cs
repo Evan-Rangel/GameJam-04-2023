@@ -72,6 +72,7 @@ public class ObjetoTienda : MonoBehaviour
         }
         else
         {
+            ErrorItem(sonidoPlayer);
             Debug.Log("Pombre");
         }
     }
