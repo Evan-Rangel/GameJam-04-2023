@@ -194,7 +194,7 @@ public class ScenaryController : MonoBehaviour
     public void NextRoom(DoorController.DoorType _doorType, Vector2 _target)
     {
         nivel++;
-        if (nivel % 15 != 0)
+        if (nivel % 15 == 0)
         {
             activateBossRoom = true;
         }
