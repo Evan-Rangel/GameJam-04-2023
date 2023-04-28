@@ -52,14 +52,22 @@ public class EnemyController : MonoBehaviour
     new Vector2(1,-1).normalized
     };
 
-
+    [SerializeField] Animator animator;
     GameObject player;
-    
-    
+
+    [SerializeField ]bool isEnemy01;
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+        if (GetComponent<Animator>()!=null)
+        {
+            animator = GetComponent<Animator>();
+        }
+        else
+        {
+            animator = null;
+        }
     }
 
     private void Start()
@@ -98,6 +106,25 @@ public class EnemyController : MonoBehaviour
 
                 rb.velocity = directions[3] * vel;
             }
+        }
+
+        if (rb.velocity.x!=0 && isEnemy01)
+        {
+            animator.SetBool("Walking", true);
+        }
+        else if(isEnemy01)
+        {
+            animator.SetBool("Walking", false);
+        }
+
+
+        if (rb.velocity.x < 0 && GetComponent<SpriteRenderer>().flipX)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        if (rb.velocity.x > 0 && !GetComponent<SpriteRenderer>().flipX)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
