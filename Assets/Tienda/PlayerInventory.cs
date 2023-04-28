@@ -25,7 +25,7 @@ public class PlayerInventory : MonoBehaviour
     void Update()
     {
         //Comprueba que este en el trigger y se pulse la tecla de comprar
-        if (isTriggered && Input.GetKeyDown(KeyCode.B))
+        if (isTriggered && Input.GetKeyDown(KeyCode.E))
         {
             //Comprueba que haya inventario disponible antes de realizar una compra
             onLimit = InventarioLimite();
