@@ -15,7 +15,7 @@ public class PlayerMovementScript : MonoBehaviour
     public Sprite EmptyHeart;
     public Sprite FullShield;
     public Sprite EmptyShield;
-
+    public MenuPausa menuPausa;
     //Escudo
     public bool shield;
     [SerializeField] float jumpForce;
@@ -151,7 +151,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
     //Funcion pa recibir daño llamala y ponle cuanto quieres que se baje
-    void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
         //random para el sonido
         int num = Random.Range(1, 4);
@@ -176,14 +176,23 @@ public class PlayerMovementScript : MonoBehaviour
         else
         {
             currentHealth -= amount;
+            Debug.Log(currentHealth);
         }
         if (currentHealth <= 0)
         {
             //Moriste proo
             //Play Death animation
             //Show GameOver Screen
+            
+            menuPausa.Morir();
+            StartCoroutine(TimingDeath());
         }
         UpdateHealth();
+    }
+    IEnumerator TimingDeath()
+    {
+        yield return new WaitForSeconds(2);
+        gameObject.SetActive(false);
     }
 
     public void UpdateHealth() 

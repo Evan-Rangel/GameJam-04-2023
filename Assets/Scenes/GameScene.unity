@@ -2192,6 +2192,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2090191620485423073, guid: 2d2e2bdf651aaf543b0f237d99de33c8, type: 3}
+      propertyPath: menuPausa
+      value: 
+      objectReference: {fileID: 1668521653}
+    - target: {fileID: 2090191620485423073, guid: 2d2e2bdf651aaf543b0f237d99de33c8, type: 3}
       propertyPath: Hearts.Array.size
       value: 11
       objectReference: {fileID: 0}
@@ -2560,7 +2564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1865154951
 MonoBehaviour:
   m_ObjectHideFlags: 0
