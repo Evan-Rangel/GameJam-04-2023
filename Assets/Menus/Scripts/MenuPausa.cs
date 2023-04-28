@@ -32,7 +32,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Ganaste()
     {
-        SceneManager.LoadScene("Victory!");
+        SceneManager.LoadScene("Ganaste");
     }
 
     public void Salir()
