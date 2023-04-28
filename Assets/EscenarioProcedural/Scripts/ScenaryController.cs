@@ -9,11 +9,10 @@ public class ScenaryController : MonoBehaviour
     [SerializeField] GameObject shopRoom;
     [SerializeField] GameObject bossRoom;
     [SerializeField] GameObject tutorialRoom;
-
+    [SerializeField] GameObject shopRoomIns;
     [SerializeField] GameObject currentCenterRoom;
     [SerializeField] GameObject currentRightRoom;
     [SerializeField] GameObject currentLeftRoom;
-    [SerializeField] GameObject shoopRoom;
 
     [SerializeField] Vector2 centerPoint;
     [SerializeField] Vector2 rightPoint;
@@ -98,9 +97,9 @@ public class ScenaryController : MonoBehaviour
                 lerpShoop = false;
                 transform.position = shopPoint;
 
-                shoopRoom.transform.position = centerPoint;
+                shopRoomIns.transform.position = centerPoint;
                 Destroy(currentCenterRoom);
-                currentCenterRoom = shoopRoom;
+                currentCenterRoom = shopRoomIns;
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
             }
         }
@@ -121,7 +120,8 @@ public class ScenaryController : MonoBehaviour
     {
         if (_doorType== DoorController.DoorType.CenterDor)
         {
-            shopRoom = Instantiate(shopRoom, shopPoint, Quaternion.identity,transform);
+            shopRoomIns = Instantiate(shopRoom, shopPoint, Quaternion.identity,transform);
+            lerpShoop = true;
         }
     }
     public void NextRoom(DoorController.DoorType _doorType, Vector2 _target)

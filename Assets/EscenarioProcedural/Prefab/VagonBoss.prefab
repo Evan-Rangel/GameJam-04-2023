@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: b32faee94d66d2f429f18f8e53c36925, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ab75e84ef49d3141a41452e24f712f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,7 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc145be2e00c7e43b0966ef44da7066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPoints: []
+  enemyGroundPoints: []
+  enemyAirPoints: []
   chestPoint: {fileID: 0}
   level: 0
 --- !u!1 &2013802383413986475
