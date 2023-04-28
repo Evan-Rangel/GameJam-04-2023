@@ -7,6 +7,7 @@ public class DefeatMenu : MonoBehaviour
 {
     public void ReplayGame()
     {
+        Debug.Log("Replay");
         SceneManager.LoadScene("SceneStore");
     }
 

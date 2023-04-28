@@ -35,6 +35,9 @@ public class ScenaryController : MonoBehaviour
     [SerializeField] int enemyGroundCount;
     [SerializeField] int enemyAirCount;
 
+    [SerializeField] GameObject leftDoor;
+    [SerializeField] GameObject rightDoor;
+
 
     bool lerpRight =false;
     bool lerpLeft=false;
@@ -44,7 +47,7 @@ public class ScenaryController : MonoBehaviour
     int nivel=0;
     [SerializeField]bool activateBossRoom = false;
     public bool roomToShop=false;
-
+    public bool nextRoom = false;
     public void setActivateBossRoom(bool _activateBossRoom)
     {
         activateBossRoom = _activateBossRoom;
@@ -62,10 +65,11 @@ public class ScenaryController : MonoBehaviour
     private void Start()
     {
         enemyGroundCount = 1;
-        enemyAirCount = 1;
+        enemyAirCount = -1;
         randomRoomArrPos = Random.Range(0, rooms.Count);
         currentCenterRoom= Instantiate(rooms[0], centerPoint, Quaternion.identity, transform);
         currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
+        nextRoom = true;
     }
 
     private void Update()
@@ -82,6 +86,7 @@ public class ScenaryController : MonoBehaviour
                 Destroy(currentCenterRoom);
                 currentCenterRoom = currentLeftRoom;
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
+                GenerateEnemies();
 
             }
         }
@@ -97,7 +102,7 @@ public class ScenaryController : MonoBehaviour
                 Destroy(currentCenterRoom);
                 currentCenterRoom = currentRightRoom;
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
-
+                GenerateEnemies();
             }
         }
         if (lerpShoop)
@@ -112,6 +117,7 @@ public class ScenaryController : MonoBehaviour
                 Destroy(currentCenterRoom);
                 currentCenterRoom = shopRoomIns;
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
+                nextRoom = true;
             }
         }
     }
@@ -120,11 +126,23 @@ public class ScenaryController : MonoBehaviour
         for (int i = 0; i < enemyGroundCount; i++)
         {
             Instantiate(enemigoSuelo[Random.Range(0,enemigoSuelo.Length)], enemiesSueloPositions[i].position, Quaternion.identity);
+            enemiesAlive++;
         }
         for (int i = 0; i < enemyAirCount; i++)
         {
+            enemiesAlive++;
+            Instantiate(enemigoAire[Random.Range(0, enemigoAire.Length)], enemiesAirePositions[i].position, Quaternion.identity);
+        }
+    }
+    public void EnemyDeath()
+    {
+        enemiesAlive--;
+        if (enemiesAlive==0)
+        {
+            nextRoom = true;
+            rightDoor.GetComponent<DoorController>().canUse = true;
+            leftDoor.GetComponent<DoorController>().canUse = true;
 
-            Instantiate(enemigoSuelo[Random.Range(0, enemigoAire.Length)], enemiesAirePositions[i].position, Quaternion.identity);
         }
     }
     public void ShopRoom(DoorController.DoorType _doorType, Vector2 _target)
@@ -153,7 +171,11 @@ public class ScenaryController : MonoBehaviour
                         randomRoomArrPos = Random.Range(0, rooms.Count);
                         currentLeftRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
                         roomToShop = false;
-                        if (enemyGroundCount< enemiesSueloPositions.Length-1)
+                        
+                    }
+                    else
+                    {
+                        if (enemyGroundCount < enemiesSueloPositions.Length - 1)
                         {
                             enemyGroundCount++;
                         }
@@ -161,9 +183,6 @@ public class ScenaryController : MonoBehaviour
                         {
                             enemyAirCount++;
                         }
-                    }
-                    else
-                    {
                         randomRoomArrPos = Random.Range(0, roomDoors.Count);
                         currentLeftRoom = Instantiate(roomDoors[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
                         roomToShop = true;
@@ -183,6 +202,10 @@ public class ScenaryController : MonoBehaviour
                         randomRoomArrPos = Random.Range(0, rooms.Count);
                         currentRightRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
                         roomToShop = false;
+                       
+                    }
+                    else
+                    {
                         if (enemyGroundCount < enemiesSueloPositions.Length - 1)
                         {
                             enemyGroundCount++;
@@ -191,9 +214,6 @@ public class ScenaryController : MonoBehaviour
                         {
                             enemyAirCount++;
                         }
-                    }
-                    else
-                    {
                         randomRoomArrPos = Random.Range(0, roomDoors.Count);
                         currentRightRoom = Instantiate(roomDoors[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
                         roomToShop = true;

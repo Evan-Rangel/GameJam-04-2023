@@ -223,6 +223,8 @@ public class EnemyController : MonoBehaviour
             health -= collision.gameObject.GetComponent<DisparoMochila>().GetDamage;
             if (health<=0)
             {
+                ScenaryController.instance.EnemyDeath();
+                
                 Destroy(gameObject);
             }
         }

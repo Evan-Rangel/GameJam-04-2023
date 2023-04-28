@@ -12,7 +12,7 @@ public class DoorController : MonoBehaviour
         CenterDor
     }
 
-    [SerializeField] bool canUse = false;
+    public bool canUse = false;
     [SerializeField] GameObject otherDoor;
     [SerializeField] GameObject shoopDoor;
     [SerializeField] DoorType doorType;
@@ -64,7 +64,7 @@ public class DoorController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player") && canUse)
         {
-            //canUse = false;
+            canUse = false;
             collision.transform.position = otherDoor.transform.position;
             StartCoroutine(MovePlayer(collision.gameObject));
             ScenaryController.instance.NextRoom(doorType, otherDoor.transform.position);

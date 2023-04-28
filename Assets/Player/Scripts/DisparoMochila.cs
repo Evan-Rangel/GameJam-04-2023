@@ -29,7 +29,20 @@ public class DisparoMochila : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
+
+    //Dar tiempo para hacer animacion de choque.
+    //IEnumerator AnimDestroy()
+    //{
+
+        // yield return new WaitForSeconds();
+        
+ 
+    //}
 
     public void setDamage(int _damage, int _multy)
     {
