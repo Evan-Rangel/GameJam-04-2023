@@ -41,6 +41,5 @@ public class DoorController : MonoBehaviour
         _player.GetComponent<PlayerMovementScript>().SetCanMove(false);
         yield return new WaitForSeconds(0.8F);
         _player.GetComponent<PlayerMovementScript>().SetCanMove(true);
-
     }
 }
