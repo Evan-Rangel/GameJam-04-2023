@@ -11,6 +11,10 @@ public class ControladorDisparo : MonoBehaviour
 
     [SerializeField] private PlayerInput playerinput;
 
+    public SpriteRenderer spriteActual;
+
+    public Sprite[] sprites;
+
     //Armas
     public bool armaDefault;
     public bool armaEscopeta;
@@ -26,6 +30,7 @@ public class ControladorDisparo : MonoBehaviour
     private void Start()
     {
         playerinput = GetComponent<PlayerInput>();
+        spriteActual = GetComponent<SpriteRenderer>();
         shooting = false;
         armaDefault = true;
         armaEscopeta = false;
@@ -38,12 +43,22 @@ public class ControladorDisparo : MonoBehaviour
     {
         //Disparo
         Disparar();
-        if (armaBigCannon == true)
+        if (armaDefault)
         {
+            spriteActual.sprite = sprites[0];
+        }
+        if (armaEscopeta)
+        {
+            spriteActual.sprite = sprites[1];
+        }
+        if (armaBigCannon)
+        {
+            spriteActual.sprite = sprites[2];
             armaDefault = false;
             armaEscopeta = false;
             CargarDisparo();
         }
+        
         
     }
 
@@ -70,15 +85,15 @@ public class ControladorDisparo : MonoBehaviour
             {
                 case 0:
                     bullet = Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
-                    bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
+                    bullet.GetComponent<DisparoMochila>().setDamage(1, multy);
                     break;
                 case 1:
                     bullet = Instantiate(bala[1], controladorDisparo[0].position, controladorDisparo[0].rotation);
-                    bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
+                    bullet.GetComponent<DisparoMochila>().setDamage(10, multy);
                     break;
                 case 2:
                     bullet = Instantiate(bala[2], controladorDisparo[0].position, controladorDisparo[0].rotation);
-                    bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
+                    bullet.GetComponent<DisparoMochila>().setDamage(20, multy);
                     break;
             }
             carga = 0;
@@ -93,8 +108,7 @@ public class ControladorDisparo : MonoBehaviour
         {
             GameObject bullet;
             if (armaDefault == true)
-            {
-
+            {             
                 armaEscopeta = false;
                 armaBigCannon = false;
                 bullet = Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
@@ -107,13 +121,12 @@ public class ControladorDisparo : MonoBehaviour
             if (armaEscopeta == true)
             {
                 armaDefault = false;
-                armaBigCannon = false;
-                
-                bullet = Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                armaBigCannon = false;                
+                bullet = Instantiate(bala[3], controladorDisparo[0].position, controladorDisparo[0].rotation);
                 bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
-                bullet = Instantiate(bala[0], controladorDisparo[1].position, controladorDisparo[1].rotation);
+                bullet = Instantiate(bala[3], controladorDisparo[1].position, controladorDisparo[1].rotation);
                 bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
-                bullet = Instantiate(bala[0], controladorDisparo[2].position, controladorDisparo[2].rotation);
+                bullet = Instantiate(bala[3], controladorDisparo[2].position, controladorDisparo[2].rotation);
                 bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
                 if (!shooting)//If para animacione slo puedes cambiar
                 {

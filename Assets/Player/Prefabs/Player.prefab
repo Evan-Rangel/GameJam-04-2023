@@ -133,7 +133,13 @@ MonoBehaviour:
   - {fileID: 2830679860960189859, guid: 94e6c12adf1289548946ffce04af1b07, type: 3}
   - {fileID: 2830679860960189859, guid: 9cb2a3983bcbe004e8fdce0b7cd3d4d2, type: 3}
   - {fileID: 2830679860960189859, guid: a179544467d33884aa78cc0911b4e72c, type: 3}
+  - {fileID: 2830679860960189859, guid: f9ccee8b7cfc5ca49a5d114163a382b9, type: 3}
   playerinput: {fileID: 0}
+  spriteActual: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 1b183ac8cb4f2de42aa2d6cebe3d48d0, type: 3}
+  - {fileID: 282723962, guid: 8ef5d489316c1b642a02caf74ef2f50a, type: 3}
+  - {fileID: -1904850166, guid: 8ef5d489316c1b642a02caf74ef2f50a, type: 3}
   armaDefault: 0
   armaEscopeta: 0
   armaBigCannon: 0
