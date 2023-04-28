@@ -105,7 +105,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: escudo power up-Recovered_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 465
+        width: 105
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80af7f86a691e7147a93f8f4b142c249
+      internalID: -1822235646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo power up-Recovered_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 483
+        width: 124
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121c668245790144a95d98c32b773119
+      internalID: 649498369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo power up-Recovered_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 494
+        width: 110
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b69a1dde7093a4183ca427d5c5d90f
+      internalID: 866188295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo power up-Recovered_3
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 497
+        width: 105
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5dccc998872fc43bf475e35028e467
+      internalID: 1949951325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo power up-Recovered_4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 486
+        width: 107
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61c1855cfb94404a942a8b2687bf472
+      internalID: -1019347094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo power up-Recovered_5
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 454
+        width: 71
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50cdc408db4077f439a2f3e99a08905f
+      internalID: 282723962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo power up-Recovered_6
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 454
+        width: 71
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0459d8cc59c25a409d28af817242242
+      internalID: -1904850166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: escudo power up-Recovered_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 349
+        width: 105
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5370d7d6bbfe74c96af2a4ccea9327
+      internalID: 832912656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +284,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      escudo power up-Recovered_1: 649498369
+      escudo power up-Recovered_4: -1019347094
+      escudo power up-Recovered_5: 282723962
+      escudo power up-Recovered_6: -1904850166
+      escudo power up-Recovered_0: -1822235646
+      escudo power up-Recovered_2: 866188295
+      escudo power up-Recovered_3: 1949951325
+      escudo power up-Recovered_7: 832912656
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
