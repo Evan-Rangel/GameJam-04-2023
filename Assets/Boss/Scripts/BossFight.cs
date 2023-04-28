@@ -12,8 +12,9 @@ public class BossFight : MonoBehaviour
     public int ataquesBrazos;
     public int ataquesCabeza;
     [SerializeField] float bulletSpeed;
+    [SerializeField] MenuPausa menuPausa;
     public int random;
-
+    public int health=50;
     [SerializeField]float temp;
     float tempTot;
     private void Start()
@@ -23,6 +24,7 @@ public class BossFight : MonoBehaviour
         partes[1].GetComponent<CircleCollider2D>().enabled = false;
         partes[2].GetComponent<CircleCollider2D>().enabled = false;
         StartCoroutine(EsperarIntroduccion());
+        menuPausa = GameObject.FindGameObjectWithTag("CanvasControlador").GetComponent<MenuPausa>();
         ataquesBrazos = 3;
     }
 
@@ -32,7 +34,7 @@ public class BossFight : MonoBehaviour
 
         Fase2();
 
-        Morir();
+       // Morir();
     }
 
     private void Fase1()
@@ -126,24 +128,28 @@ public class BossFight : MonoBehaviour
         }
     }
 
-    private void Morir()
+    public void Morir()
     {
-        /*
-        if (partes[0].GetComponent<EnemyController>().Health <= 0)
+        
+        gameObject.SetActive(false);
+
+        menuPausa.Ganaste();
+
+        /*if (partes[0].GetComponent<EnemyController>().Health <= 0)
         {
             partes[0].GetComponent<CircleCollider2D>().enabled = false;
             partes[0].GetComponent<Animator>().SetBool("Morir", true);
         
         }
-        */
-        /*
+        
+        
         if (partes[1].GetComponent<EnemyController>().Health <= 0)
         {
             partes[1].GetComponent<CircleCollider2D>().enabled = false;
             partes[1].GetComponent<Animator>().SetBool("Morir", true);
         }
-        */
-        /*
+        
+        
         if (partes[2].GetComponent<EnemyController>().Health <= 0)
         {
             partes[2].GetComponent<CircleCollider2D>().enabled = false;
@@ -201,5 +207,12 @@ public class BossFight : MonoBehaviour
     {
         yield return new WaitForSeconds(11);
         random = Random.Range(1, 4);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerBullet"))
+        {
+            health -= collision.GetComponent<DisparoMochila>().GetDamage;
+        }
     }
 }

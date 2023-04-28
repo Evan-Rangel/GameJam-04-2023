@@ -70,7 +70,9 @@ public class ScenaryController : MonoBehaviour
         enemyGroundCount = 1;
         enemyAirCount = -1;
         randomRoomArrPos = Random.Range(0, rooms.Count);
-        currentCenterRoom= Instantiate(rooms[0], centerPoint, Quaternion.identity, transform);
+       // currentCenterRoom= Instantiate(rooms[0], centerPoint, Quaternion.identity, transform);
+        currentCenterRoom= Instantiate(bossRoom, centerPoint, Quaternion.identity, transform);
+
         currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
         nextRoom = true;
         rightDoor.GetComponent<DoorController>().canUse = true;
@@ -193,7 +195,10 @@ public class ScenaryController : MonoBehaviour
     public void NextRoom(DoorController.DoorType _doorType, Vector2 _target)
     {
         nivel++;
-        
+        if (nivel % 15 != 0)
+        {
+            activateBossRoom = true;
+        }
         switch (_doorType)
         {
             case DoorController.DoorType.LeftDoor:
