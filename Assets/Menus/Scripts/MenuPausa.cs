@@ -30,6 +30,11 @@ public class MenuPausa : MonoBehaviour
         menuMorir.SetActive(true);
     }
 
+    public void Ganaste()
+    {
+        SceneManager.LoadScene("Victory!");
+    }
+
     public void Salir()
     {
         SceneManager.LoadScene("MenuPrincipal");
