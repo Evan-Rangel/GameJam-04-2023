@@ -18,6 +18,14 @@ public class ScenaryController : MonoBehaviour
     [SerializeField] Vector2 rightPoint;
     [SerializeField] Vector2 leftPoint;
 
+
+    [SerializeField] GameObject[] enemigoSuelo;
+    [SerializeField] GameObject[] enemigoAire;
+
+    [SerializeField] int enemiesAlive;
+
+
+
     [SerializeField] bool showGizmos=false;
     bool lerpRight;
     bool lerpLeft;
@@ -75,10 +83,21 @@ public class ScenaryController : MonoBehaviour
                 currentRightRoom.transform.position = centerPoint;
                 Destroy(currentCenterRoom);
                 currentCenterRoom = currentRightRoom;
-
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
 
             }
+        }
+    }
+    void GenerateEnemies()
+    {
+        for (int i = 0; i < currentCenterRoom.GetComponent<RoomController>().enemyGroundPoints.Length; i++)
+        {
+            Instantiate(enemigoSuelo[Random.Range(0,enemigoSuelo.Length)], currentCenterRoom.GetComponent<RoomController>().enemyGroundPoints[i].position, Quaternion.identity);
+        }
+        for (int i = 0; i < currentCenterRoom.GetComponent<RoomController>().enemyAirPoints.Length; i++)
+        {
+
+            Instantiate(enemigoSuelo[Random.Range(0, enemigoAire.Length)], currentCenterRoom.GetComponent<RoomController>().enemyAirPoints[i].position, Quaternion.identity);
         }
     }
 
@@ -113,7 +132,6 @@ public class ScenaryController : MonoBehaviour
                 if (activateBossRoom)
                 {
                     currentRightRoom = Instantiate(bossRoom, leftPoint, Quaternion.identity, transform);
-
                 }
                 else
                 {
@@ -132,9 +150,7 @@ public class ScenaryController : MonoBehaviour
                 lerpRight = true;
                 break;
         }
-
     }
-
 
     private void OnDrawGizmos()
     {

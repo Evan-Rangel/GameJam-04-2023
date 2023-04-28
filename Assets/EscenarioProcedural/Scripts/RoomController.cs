@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviour
 {
-    [SerializeField] Transform[] enemyPoints;
+    
+    
+    public Transform[] enemyGroundPoints;
+    public Transform[] enemyAirPoints;
+
 
     [SerializeField] Transform chestPoint;
 
@@ -16,7 +20,5 @@ public class RoomController : MonoBehaviour
     {
         level = _level;
     }
-
-
 
 }

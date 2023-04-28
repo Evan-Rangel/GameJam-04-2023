@@ -39,7 +39,11 @@ public class DoorController : MonoBehaviour
     IEnumerator MovePlayer(GameObject _player)
     {
         _player.GetComponent<PlayerMovementScript>().SetCanMove(false);
-        yield return new WaitForSeconds(0.8F);
+        _player.SetActive(false);
+        yield return new WaitForSeconds(0.5F);
+        _player.SetActive(true);
+
         _player.GetComponent<PlayerMovementScript>().SetCanMove(true);
+
     }
 }
