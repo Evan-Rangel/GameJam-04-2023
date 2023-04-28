@@ -269,7 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc145be2e00c7e43b0966ef44da7066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPoints: []
+  enemyGroundPoints: []
+  enemyAirPoints: []
   chestPoint: {fileID: 0}
   level: 0
 --- !u!1 &6022544584930711907
