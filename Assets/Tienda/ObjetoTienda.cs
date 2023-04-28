@@ -60,13 +60,14 @@ public class ObjetoTienda : MonoBehaviour
     public void Comprar(float monedas, Dictionary<string, float> playerItems, AudioSource sonidoPlayer)
     {
         //AudioSource audio = GetComponent<AudioSource>();
-        sonidoPlayer.PlayOneShot(pickUpItem);
         //comprueba que el player tenga dinero suficiente
-        if (monedas >= price)
+        bool duplicado = ComprobarDuplicado(playerItems);
+        if (monedas >= price && duplicado == false)
         {
             //Resta el dinero que cuesta al player
             QuitarDinero(playerItems, monedas);
             DarItem(playerItems);
+            sonidoPlayer.PlayOneShot(pickUpItem);
             //Se inhabilita el item a la venta
             gameObject.SetActive(false);
         }
@@ -75,6 +76,18 @@ public class ObjetoTienda : MonoBehaviour
             ErrorItem(sonidoPlayer);
             Debug.Log("Pombre");
         }
+    }
+
+    public bool ComprobarDuplicado(Dictionary<string, float> playerItems)
+    {
+        foreach (KeyValuePair<string, float> item in playerItems)
+        {
+            if(nombre == item.Key)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     //Agrega el item al inventario del player
