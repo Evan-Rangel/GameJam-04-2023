@@ -202,6 +202,18 @@ PrefabInstance:
       propertyPath: nombre
       value: Estrella
       objectReference: {fileID: 0}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: onItem
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f833a05b8ed3ec43a485d7a747a914e, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: errorItem
+      value: 
+      objectReference: {fileID: 8300000, guid: d483e47e168f37f48a986ff3a471deb2, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: pickUpItem
+      value: 
+      objectReference: {fileID: 8300000, guid: fe97dd505a362314bb4fd8340e2181be, type: 3}
     - target: {fileID: 7157424659800349502, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -265,6 +277,18 @@ PrefabInstance:
       propertyPath: nombre
       value: Prochevo
       objectReference: {fileID: 0}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: onItem
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f833a05b8ed3ec43a485d7a747a914e, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: errorItem
+      value: 
+      objectReference: {fileID: 8300000, guid: d483e47e168f37f48a986ff3a471deb2, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: pickUpItem
+      value: 
+      objectReference: {fileID: 8300000, guid: fe97dd505a362314bb4fd8340e2181be, type: 3}
     - target: {fileID: 7157424659800349502, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -328,6 +352,18 @@ PrefabInstance:
       propertyPath: nombre
       value: Manzana
       objectReference: {fileID: 0}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: onItem
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f833a05b8ed3ec43a485d7a747a914e, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: errorItem
+      value: 
+      objectReference: {fileID: 8300000, guid: d483e47e168f37f48a986ff3a471deb2, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: pickUpItem
+      value: 
+      objectReference: {fileID: 8300000, guid: fe97dd505a362314bb4fd8340e2181be, type: 3}
     - target: {fileID: 7157424659800349502, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -569,6 +605,18 @@ PrefabInstance:
       propertyPath: nombre
       value: Lanza Webos
       objectReference: {fileID: 0}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: onItem
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f833a05b8ed3ec43a485d7a747a914e, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: errorItem
+      value: 
+      objectReference: {fileID: 8300000, guid: d483e47e168f37f48a986ff3a471deb2, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: pickUpItem
+      value: 
+      objectReference: {fileID: 8300000, guid: fe97dd505a362314bb4fd8340e2181be, type: 3}
     - target: {fileID: 7157424659800349502, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -826,9 +874,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 50a9fe611cb2cc744a8fa14f7ae17152, type: 3}
     - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: nombre
+      value: Estrella
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
       propertyPath: onItem
       value: 
-      objectReference: {fileID: 8300000, guid: 50a9fe611cb2cc744a8fa14f7ae17152, type: 3}
+      objectReference: {fileID: 8300000, guid: 75527580926d86a48a0cbca8eb314fad, type: 3}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: errorItem
+      value: 
+      objectReference: {fileID: 8300000, guid: d483e47e168f37f48a986ff3a471deb2, type: 3}
     - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
       propertyPath: pickUpItem
       value: 

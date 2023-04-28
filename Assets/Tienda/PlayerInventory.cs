@@ -29,6 +29,7 @@ public class PlayerInventory : MonoBehaviour
         {
             //Comprueba que haya inventario disponible antes de realizar una compra
             onLimit = InventarioLimite();
+            AudioSource audio = GetComponent<AudioSource>();
             if (onLimit)
             {
                 foreach (KeyValuePair<string, float> item in playerItems)
@@ -36,7 +37,6 @@ public class PlayerInventory : MonoBehaviour
                     if (item.Key == "Coins")
                     {
                         //Llama a la funcion de compra, enviandole el parametro del player inventory y el dinero disponible
-                        AudioSource audio = GetComponent<AudioSource>();
                         otherScript.Comprar(item.Value, playerItems, audio);
                         break;
                     }
@@ -45,6 +45,7 @@ public class PlayerInventory : MonoBehaviour
             }
             else
             {
+                otherScript.ErrorItem(audio);
                 Debug.Log("Fuera de Inventario");
             }
         }
