@@ -5,13 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void Continue()
     {
         SceneManager.LoadScene("SceneStore");
     }
 
-    public void QuitGame()
+    public void MainMenu()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Options()
+    {
+        
     }
 }

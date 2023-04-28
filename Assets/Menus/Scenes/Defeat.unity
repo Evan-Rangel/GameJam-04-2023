@@ -366,7 +366,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1130231815370860098, guid: f09462f4745bf7c45a7fd49304cff6e4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1130231815639299974, guid: f09462f4745bf7c45a7fd49304cff6e4, type: 3}
       propertyPath: m_Pivot.x
@@ -458,7 +458,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1130231816521519162, guid: f09462f4745bf7c45a7fd49304cff6e4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583774758396170895, guid: f09462f4745bf7c45a7fd49304cff6e4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
