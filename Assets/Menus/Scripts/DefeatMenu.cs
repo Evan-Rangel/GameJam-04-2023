@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class DefeatMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void ReplayGame()
     {
         SceneManager.LoadScene("SceneStore");
     }
 
-    public void QuitGame()
+    public void MainMenu()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }
