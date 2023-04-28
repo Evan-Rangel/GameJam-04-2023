@@ -960,9 +960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62fbc327a8f4ba4d9f06049a0f6f5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movType: 0
-  movDir: 02000000030000000200000003000000
-  vel: 1
+  movType: 1
+  movDir: 
+  vel: 1.5
   movTime: 2
   currentMovDir: 0
   projectilesPerWave: 1
@@ -1146,17 +1146,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62fbc327a8f4ba4d9f06049a0f6f5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movType: 0
-  movDir: 02000000030000000200000003000000
-  vel: 1
-  movTime: 2
+  movType: 1
+  movDir: 
+  vel: 0.5
+  movTime: 3
   currentMovDir: 0
   projectilesPerWave: 1
-  angleInit: 0
+  angleInit: 90
   angleSum: 0
-  bulletSpeed: 5.32
+  bulletSpeed: 4
   bullet: {fileID: 4624398093183693953, guid: 3e74a3ec9bfdc154495ac3d79f38fae5, type: 3}
-  bulletCadence: 2
+  bulletCadence: 0.8
   bulletDamage: 1
   health: 20
   animator: {fileID: 0}
@@ -1656,17 +1656,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62fbc327a8f4ba4d9f06049a0f6f5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movType: 0
-  movDir: 02000000030000000200000003000000
-  vel: 1
-  movTime: 2
+  movType: 1
+  movDir: 
+  vel: 3
+  movTime: 1.5
   currentMovDir: 0
   projectilesPerWave: 1
   angleInit: 0
   angleSum: 0
-  bulletSpeed: 5.32
+  bulletSpeed: 3
   bullet: {fileID: 4624398093183693953, guid: 3e74a3ec9bfdc154495ac3d79f38fae5, type: 3}
-  bulletCadence: 2
+  bulletCadence: 1
   bulletDamage: 1
   health: 20
   animator: {fileID: 0}
