@@ -27,6 +27,7 @@ public class PlayerMovementScript : MonoBehaviour
     bool frstCheck = false;
 
     public AudioSource Ruidos;
+    public AudioSource Pasos;
     public AudioClip Jump_Start;
     public AudioClip Hits_Ground;
     public AudioClip Damage_Big;
@@ -59,7 +60,10 @@ public class PlayerMovementScript : MonoBehaviour
 
             xDir = input.actions["Move"].ReadValue<Vector2>().x;
             rb.velocity = new Vector2(xDir*movementVelocity, rb.velocity.y);
-
+            if (!Pasos.isPlaying && rb.velocity.x!=0 && !isJumping)
+            {
+                Pasos.Play();
+            }
 
             if (input.actions["Jump"].IsPressed() && !isJumping && jumpT > 0)
             {
