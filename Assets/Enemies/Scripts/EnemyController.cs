@@ -116,16 +116,17 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetBool("Walking", false);
         }
-
-
-        if (rb.velocity.x < 0 && GetComponent<SpriteRenderer>().flipX)
+        if (player.transform.position.x < transform.position.x && GetComponent<SpriteRenderer>().flipX)
         {
             GetComponent<SpriteRenderer>().flipX = false;
+
         }
-        if (rb.velocity.x > 0 && !GetComponent<SpriteRenderer>().flipX)
+        if (player.transform.position.x > transform.position.x && !GetComponent<SpriteRenderer>().flipX)
         {
             GetComponent<SpriteRenderer>().flipX = true;
+
         }
+
     }
 
     void AttackPlayer()
@@ -143,6 +144,8 @@ public class EnemyController : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
+                GetComponent<SpriteRenderer>().flipX = false;
+
                 rb.velocity = directions[3] * vel;
             }
             else
