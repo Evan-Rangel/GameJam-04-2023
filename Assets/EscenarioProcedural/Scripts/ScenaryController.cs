@@ -7,7 +7,7 @@ public class ScenaryController : MonoBehaviour
     [SerializeField]List <GameObject> rooms;
     [SerializeField] List<GameObject> roomDoors;
     [SerializeField] GameObject shopRoom;
-    [SerializeField] GameObject boosRoom;
+    [SerializeField] GameObject bossRoom;
     [SerializeField] GameObject tutorialRoom;
 
     [SerializeField] GameObject currentCenterRoom;
@@ -19,12 +19,19 @@ public class ScenaryController : MonoBehaviour
     [SerializeField] Vector2 leftPoint;
 
     [SerializeField] bool showGizmos=false;
-    public static ScenaryController instance;
     bool lerpRight;
     bool lerpLeft;
     [SerializeField]float moveSpeed;
     int randomRoomArrPos;
     int nivel=0;
+    [SerializeField]bool activateBossRoom = false;
+
+    public void setActivateBossRoom(bool _activateBossRoom)
+    {
+        activateBossRoom = _activateBossRoom;
+    }
+
+    public static ScenaryController instance;
     private void Awake()
     {
         if (instance==null)
@@ -38,8 +45,6 @@ public class ScenaryController : MonoBehaviour
         randomRoomArrPos = Random.Range(0, rooms.Count);
         currentCenterRoom= Instantiate(rooms[0], centerPoint, Quaternion.identity, transform);
         currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
-        
-
     }
 
     private void Update()
@@ -80,39 +85,55 @@ public class ScenaryController : MonoBehaviour
     public void NextRoom(DoorController.DoorType _doorType, Vector2 _target)
     {
         nivel++;
-
+        
         switch (_doorType)
         {
             case DoorController.DoorType.LeftDoor:
-                if (nivel % 5 != 0)
+                if (activateBossRoom)
                 {
-                    randomRoomArrPos = Random.Range(0, rooms.Count);
-                    currentLeftRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
+                    currentLeftRoom = Instantiate(bossRoom, rightPoint, Quaternion.identity, transform);
+
                 }
                 else
                 {
-                    randomRoomArrPos = Random.Range(0, roomDoors.Count);
-                    currentLeftRoom = Instantiate(roomDoors[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
+                    if (nivel % 5 != 0)
+                    {
+                        randomRoomArrPos = Random.Range(0, rooms.Count);
+                        currentLeftRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
+                    }
+                    else
+                    {
+                        randomRoomArrPos = Random.Range(0, roomDoors.Count);
+                        currentLeftRoom = Instantiate(roomDoors[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
+                    }
                 }
-
                 lerpLeft = true;
                 break;
             case DoorController.DoorType.RightDoor:
-                if (nivel % 5 != 0)
+                if (activateBossRoom)
                 {
-                    randomRoomArrPos = Random.Range(0, rooms.Count);
-                    currentRightRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+                    currentRightRoom = Instantiate(bossRoom, leftPoint, Quaternion.identity, transform);
+
                 }
                 else
                 {
-                    randomRoomArrPos = Random.Range(0, roomDoors.Count);
-                    currentRightRoom = Instantiate(roomDoors[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+                    if (nivel % 5 != 0)
+                    {
+                        randomRoomArrPos = Random.Range(0, rooms.Count);
+                        currentRightRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+                    }
+                    else
+                    {
+                        randomRoomArrPos = Random.Range(0, roomDoors.Count);
+                        currentRightRoom = Instantiate(roomDoors[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
+                    }
                 }
+
                 lerpRight = true;
                 break;
         }
-    }
 
+    }
 
 
     private void OnDrawGizmos()
@@ -123,7 +144,6 @@ public class ScenaryController : MonoBehaviour
             Gizmos.DrawCube(centerPoint, new Vector2(18,10));
             Gizmos.DrawCube(rightPoint, new Vector2(18, 10));
             Gizmos.DrawCube(leftPoint, new Vector2(18, 10));
-
         }
     }
 }
