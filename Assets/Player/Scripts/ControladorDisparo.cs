@@ -122,11 +122,11 @@ public class ControladorDisparo : MonoBehaviour
             {
                 armaDefault = false;
                 armaBigCannon = false;                
-                bullet = Instantiate(bala[0], controladorDisparo[0].position, controladorDisparo[0].rotation);
+                bullet = Instantiate(bala[3], controladorDisparo[0].position, controladorDisparo[0].rotation);
                 bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
-                bullet = Instantiate(bala[0], controladorDisparo[1].position, controladorDisparo[1].rotation);
+                bullet = Instantiate(bala[3], controladorDisparo[1].position, controladorDisparo[1].rotation);
                 bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
-                bullet = Instantiate(bala[0], controladorDisparo[2].position, controladorDisparo[2].rotation);
+                bullet = Instantiate(bala[3], controladorDisparo[2].position, controladorDisparo[2].rotation);
                 bullet.GetComponent<DisparoMochila>().setDamage(damage, multy);
                 if (!shooting)//If para animacione slo puedes cambiar
                 {
