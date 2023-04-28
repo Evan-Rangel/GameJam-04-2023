@@ -8,6 +8,7 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
+    [SerializeField] private GameObject menuMorir;
     public void Pausar()
     {
         Time.timeScale = 0f;
@@ -20,6 +21,13 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
+    }
+
+    public void Morir()
+    {
+        botonPausa.SetActive(false);
+        menuPausa.SetActive(false);
+        menuMorir.SetActive(true);
     }
 
     public void Salir()
