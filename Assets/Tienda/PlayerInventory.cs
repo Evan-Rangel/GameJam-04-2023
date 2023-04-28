@@ -13,10 +13,12 @@ public class PlayerInventory : MonoBehaviour
     bool onLimit;
     bool comprado;
     ObjetoTienda otherScript;
+    PlayerMovementScript plMove;
 
     // Start is called before the first frame update
     void Start()
     {
+        plMove = GetComponent<PlayerMovementScript>();
         //Prueba de dinero en inventario para comprar items
         playerItems.Add("Coins", 1000);
     }
@@ -38,6 +40,7 @@ public class PlayerInventory : MonoBehaviour
                     {
                         //Llama a la funcion de compra, enviandole el parametro del player inventory y el dinero disponible
                         otherScript.Comprar(item.Value, playerItems, audio, gameObject);
+                        plMove.UpdateHealth();
                         break;
                     }
                 }

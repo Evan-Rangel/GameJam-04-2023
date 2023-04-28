@@ -490,13 +490,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 0}
   maxHealth: 10
+  currentMaxHealth: 5
   currentHealth: 3
+  Hearts: []
+  FullHeart: {fileID: 21300000, guid: 2e397a3c2c7b8474ba53488662b6aaeb, type: 3}
+  EmptyHeart: {fileID: 21300000, guid: 5236bd4cf30dbaa458e454e2283803a5, type: 3}
+  FullShield: {fileID: 21300000, guid: 3f2c2a5904d0f174e9c8cf107af1c189, type: 3}
+  EmptyShield: {fileID: 21300000, guid: 8a897ed6d3e645546b061d184f7e4773, type: 3}
   shield: 0
   jumpForce: 6
   movementVelocity: 4
   gravityScale: 4
   fallGravityScale: 4
   jumpTime: 0.3
+  stars: 0
   Ruidos: {fileID: 3343913874755289352}
   Pasos: {fileID: 1854757937438368124}
   Jump_Start: {fileID: 8300000, guid: b88da014255893b4b991547c9d1132c2, type: 3}

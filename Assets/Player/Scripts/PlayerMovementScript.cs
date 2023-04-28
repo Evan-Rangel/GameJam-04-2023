@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] PlayerInput input;
     //Vida
     public int maxHealth = 10;
+    public int currentMaxHealth = 5;
     public int currentHealth = 3;
+    [SerializeField] public Image[] Hearts;
+    public Sprite FullHeart;
+    public Sprite EmptyHeart;
+    public Sprite FullShield;
+    public Sprite EmptyShield;
+
     //Escudo
     public bool shield;
     [SerializeField] float jumpForce;
@@ -52,6 +60,7 @@ public class PlayerMovementScript : MonoBehaviour
         shield = false;
         jumpT = jumpTime;
         jumpF = jumpForce;
+        UpdateHealth();
     }
     private void Update()
     {
@@ -147,6 +156,39 @@ public class PlayerMovementScript : MonoBehaviour
             //Moriste proo
             //Play Death animation
             //Show GameOver Screen
+        }
+        UpdateHealth();
+    }
+
+    public void UpdateHealth() 
+    {
+        for (int i = 0; i <= maxHealth; i++)
+        {
+            if (i < currentMaxHealth)
+            {
+                Hearts[i].enabled=true;
+                if (i < currentHealth)
+                {
+                    Hearts[i].sprite = FullHeart;
+                }
+                else
+                {
+                    Hearts[i].sprite = EmptyHeart;
+                }
+            }
+            else
+            {
+                Hearts[i].enabled = false;
+            }
+        }
+        Hearts[currentMaxHealth].enabled = true;
+        if (shield)
+        {
+            Hearts[currentMaxHealth].sprite = FullShield;
+        }
+        else
+        {
+            Hearts[currentMaxHealth].sprite = EmptyShield;
         }
     }
 }
