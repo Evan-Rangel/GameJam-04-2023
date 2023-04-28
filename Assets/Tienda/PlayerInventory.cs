@@ -37,7 +37,7 @@ public class PlayerInventory : MonoBehaviour
                     if (item.Key == "Coins")
                     {
                         //Llama a la funcion de compra, enviandole el parametro del player inventory y el dinero disponible
-                        otherScript.Comprar(item.Value, playerItems, audio);
+                        otherScript.Comprar(item.Value, playerItems, audio, gameObject);
                         break;
                     }
                 }

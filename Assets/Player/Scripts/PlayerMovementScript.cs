@@ -15,6 +15,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] float gravityScale = 5;
     [SerializeField] float fallGravityScale = 15;
     [SerializeField] float jumpTime;
+    public int stars;
     float jumpF;
     Vector2 movDir;
     Rigidbody2D rb;

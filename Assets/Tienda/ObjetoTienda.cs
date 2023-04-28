@@ -57,7 +57,7 @@ public class ObjetoTienda : MonoBehaviour
         Debug.Log("Inexistente");
     }
 
-    public void Comprar(float monedas, Dictionary<string, float> playerItems, AudioSource sonidoPlayer)
+    public void Comprar(float monedas, Dictionary<string, float> playerItems, AudioSource sonidoPlayer, GameObject _player)
     {
         //AudioSource audio = GetComponent<AudioSource>();
         //comprueba que el player tenga dinero suficiente
@@ -67,6 +67,7 @@ public class ObjetoTienda : MonoBehaviour
             //Resta el dinero que cuesta al player
             QuitarDinero(playerItems, monedas);
             DarItem(playerItems);
+            GetComponentInChildren<PowerUp>().ApllyBuffEffect(_player);
             sonidoPlayer.PlayOneShot(pickUpItem);
             //Se inhabilita el item a la venta
             gameObject.SetActive(false);

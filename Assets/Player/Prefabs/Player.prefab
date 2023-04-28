@@ -492,7 +492,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 3
   shield: 0
-  jumpForce: 10
+  jumpForce: 6
   movementVelocity: 4
   gravityScale: 4
   fallGravityScale: 4
