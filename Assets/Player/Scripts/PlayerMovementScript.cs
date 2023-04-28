@@ -24,6 +24,16 @@ public class PlayerMovementScript : MonoBehaviour
     float jumpT;
 
     bool canMove=true;
+    bool frstCheck = false;
+
+    public AudioSource Ruidos;
+    public AudioSource Pasos;
+    public AudioClip Jump_Start;
+    public AudioClip Hits_Ground;
+    public AudioClip Damage_Big;
+    public AudioClip Damage_Med;
+    public AudioClip Damage_Sm;
+
 
     public void SetCanMove(bool _canMove)
     {
@@ -50,7 +60,10 @@ public class PlayerMovementScript : MonoBehaviour
 
             xDir = input.actions["Move"].ReadValue<Vector2>().x;
             rb.velocity = new Vector2(xDir*movementVelocity, rb.velocity.y);
-
+            if (!Pasos.isPlaying && rb.velocity.x!=0 && !isJumping)
+            {
+                Pasos.Play();
+            }
 
             if (input.actions["Jump"].IsPressed() && !isJumping && jumpT > 0)
             {
@@ -61,11 +74,15 @@ public class PlayerMovementScript : MonoBehaviour
                 }
                 jumpT -= Time.deltaTime;
                 canJump = true;
-
             }
             else if (jumpT != jumpTime)
             {
+                if (!isJumping)
+                {
+                    Ruidos.PlayOneShot(Jump_Start);
+                }
                 isJumping = true;
+
             }
             if (rb.velocity.y>0)
             {
@@ -85,11 +102,36 @@ public class PlayerMovementScript : MonoBehaviour
             jumpF = jumpForce;
             jumpT = jumpTime;
             isJumping = false;
+
+            if(frstCheck)
+            {
+                Ruidos.PlayOneShot(Hits_Ground);
+            }
+            else
+            {
+                frstCheck = true;
+            }
+            
         }
     }
     //Funcion pa recibir daño llamala y ponle cuanto quieres que se baje
     void TakeDamage(int amount)
     {
+        //random para el sonido
+        int num = Random.Range(1, 4);
+        switch (num)
+        {
+            case 1:
+                Ruidos.PlayOneShot(Damage_Sm);
+                break;
+            case 2:
+                Ruidos.PlayOneShot(Damage_Med);
+                break;
+            case 3:
+                Ruidos.PlayOneShot(Damage_Big);
+                break;
+        }
+
         //Si el escudo esta activo no recibe daño y se apaga
         if (shield == true)
         {

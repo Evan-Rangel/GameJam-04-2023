@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 93378792}
   - component: {fileID: 93378791}
   - component: {fileID: 93378790}
-  - component: {fileID: 93378789}
   - component: {fileID: 93378793}
   m_Layer: 0
   m_Name: BrazoIzq
@@ -194,31 +193,6 @@ Transform:
   m_Father: {fileID: 1953900910}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &93378789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93378787}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62fbc327a8f4ba4d9f06049a0f6f5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movType: 0
-  movDir: 
-  vel: 2
-  movTime: 2
-  currentMovDir: 0
-  projectilesPerWave: 1
-  angleInit: 0
-  angleSum: 0
-  bulletSpeed: 1
-  bullet: {fileID: 4624398093183693953, guid: 3e74a3ec9bfdc154495ac3d79f38fae5, type: 3}
-  bulletCadence: 1
-  bulletDamage: 0
-  health: 10
 --- !u!58 &93378790
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -470,7 +444,6 @@ GameObject:
   - component: {fileID: 324925428}
   - component: {fileID: 324925427}
   - component: {fileID: 324925426}
-  - component: {fileID: 324925425}
   - component: {fileID: 324925429}
   m_Layer: 0
   m_Name: BrazoDer
@@ -494,31 +467,6 @@ Transform:
   m_Father: {fileID: 1953900910}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &324925425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 324925423}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62fbc327a8f4ba4d9f06049a0f6f5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movType: 0
-  movDir: 
-  vel: 0
-  movTime: 0
-  currentMovDir: 0
-  projectilesPerWave: 0
-  angleInit: 0
-  angleSum: 0
-  bulletSpeed: 0
-  bullet: {fileID: 0}
-  bulletCadence: 0
-  bulletDamage: 0
-  health: 0
 --- !u!58 &324925426
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1125,7 +1073,6 @@ GameObject:
   - component: {fileID: 1449084331}
   - component: {fileID: 1449084330}
   - component: {fileID: 1449084329}
-  - component: {fileID: 1449084328}
   - component: {fileID: 1449084332}
   m_Layer: 0
   m_Name: Cabeza
@@ -1149,31 +1096,6 @@ Transform:
   m_Father: {fileID: 1953900910}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1449084328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449084326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62fbc327a8f4ba4d9f06049a0f6f5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movType: 0
-  movDir: 
-  vel: 0
-  movTime: 0
-  currentMovDir: 0
-  projectilesPerWave: 0
-  angleInit: 0
-  angleSum: 0
-  bulletSpeed: 0
-  bullet: {fileID: 0}
-  bulletCadence: 0
-  bulletDamage: 0
-  health: 0
 --- !u!58 &1449084329
 CircleCollider2D:
   m_ObjectHideFlags: 0

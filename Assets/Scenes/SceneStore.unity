@@ -242,6 +242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3343913874755289352, guid: 2d2e2bdf651aaf543b0f237d99de33c8, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9174963570079245739, guid: 2d2e2bdf651aaf543b0f237d99de33c8, type: 3}
       propertyPath: itemsLimit
       value: 5

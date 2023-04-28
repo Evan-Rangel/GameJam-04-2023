@@ -27,6 +27,9 @@ public class ControladorDisparo : MonoBehaviour
     public int damage;
     public int multy;
 
+    public AudioSource Ruidos;
+    public AudioClip Attack_Star;
+
     private void Start()
     {
         playerinput = GetComponent<PlayerInput>();
@@ -133,7 +136,7 @@ public class ControladorDisparo : MonoBehaviour
                     shooting = true;
                 }
             }
-            
+            Ruidos.PlayOneShot(Attack_Star);
         }
         
         
