@@ -5,9 +5,17 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviour
 {
-    [SerializeField] GameObject rightDoor;
-    [SerializeField] GameObject leftDoor;
-    [SerializeField] GameObject centerDoor;
+    [SerializeField] Transform[] enemyPoints;
+
+    [SerializeField] Transform chestPoint;
+
+    [SerializeField] int level;
+
+
+    public void SetLevel(int _level)
+    {
+        level = _level;
+    }
 
 
 
