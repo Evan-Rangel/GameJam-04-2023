@@ -874,6 +874,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 50a9fe611cb2cc744a8fa14f7ae17152, type: 3}
     - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
+      propertyPath: nombre
+      value: Estrella
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157424659800349501, guid: d1ba1d39e0d310e4db92e56c59252837, type: 3}
       propertyPath: onItem
       value: 
       objectReference: {fileID: 8300000, guid: 75527580926d86a48a0cbca8eb314fad, type: 3}
