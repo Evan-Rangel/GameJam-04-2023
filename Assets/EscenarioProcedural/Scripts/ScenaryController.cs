@@ -37,8 +37,11 @@ public class ScenaryController : MonoBehaviour
 
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
+    [SerializeField] GameObject[] items;
+    [SerializeField] Transform[] itemPos;
+    [SerializeField] List<GameObject> itemPrefabs;
 
-
+    int itemCount = 3;
     bool lerpRight =false;
     bool lerpLeft=false;
     bool lerpShoop=false;
@@ -70,6 +73,8 @@ public class ScenaryController : MonoBehaviour
         currentCenterRoom= Instantiate(rooms[0], centerPoint, Quaternion.identity, transform);
         currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
         nextRoom = true;
+        rightDoor.GetComponent<DoorController>().canUse = true;
+        leftDoor.GetComponent<DoorController>().canUse = true;
     }
 
     private void Update()
@@ -87,7 +92,8 @@ public class ScenaryController : MonoBehaviour
                 currentCenterRoom = currentLeftRoom;
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
                 GenerateEnemies();
-
+                rightDoor.GetComponent<DoorController>().canUse = false;
+                leftDoor.GetComponent<DoorController>().canUse = false;
             }
         }
         if (lerpRight)
@@ -103,6 +109,8 @@ public class ScenaryController : MonoBehaviour
                 currentCenterRoom = currentRightRoom;
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
                 GenerateEnemies();
+                rightDoor.GetComponent<DoorController>().canUse = false;
+                leftDoor.GetComponent<DoorController>().canUse = false;
             }
         }
         if (lerpShoop)
@@ -118,7 +126,22 @@ public class ScenaryController : MonoBehaviour
                 currentCenterRoom = shopRoomIns;
                 currentCenterRoom.GetComponent<RoomController>().SetLevel(nivel);
                 nextRoom = true;
+                GenerateShop();
             }
+        }
+    }
+
+    void GenerateShop()
+    {
+        for (int i = 0; i < itemPos.Length; i++)
+        {
+            if (itemPrefabs.Count>0)
+            {
+                int rand= Random.Range(0, itemPrefabs.Count);
+                Instantiate(itemPrefabs[rand], itemPos[i]);
+                itemPrefabs.Remove(itemPrefabs[rand]);
+            }
+
         }
     }
     void GenerateEnemies()
@@ -143,6 +166,12 @@ public class ScenaryController : MonoBehaviour
             rightDoor.GetComponent<DoorController>().canUse = true;
             leftDoor.GetComponent<DoorController>().canUse = true;
 
+            int rand = Random.Range(0,3);
+            if (rand==2)
+            {
+                Instantiate(chestPrefab, chestPosition);
+            }
+
         }
     }
     public void ShopRoom(DoorController.DoorType _doorType, Vector2 _target)
@@ -151,6 +180,14 @@ public class ScenaryController : MonoBehaviour
         {
             shopRoomIns = Instantiate(shopRoom, shopPoint, Quaternion.identity,transform);
             lerpShoop = true;
+            if (enemyGroundCount < enemiesSueloPositions.Length - 1)
+            {
+                enemyGroundCount++;
+            }
+            if (enemyAirCount < enemiesAirePositions.Length - 1)
+            {
+                enemyAirCount++;
+            }
         }
     }
     public void NextRoom(DoorController.DoorType _doorType, Vector2 _target)
@@ -171,18 +208,11 @@ public class ScenaryController : MonoBehaviour
                         randomRoomArrPos = Random.Range(0, rooms.Count);
                         currentLeftRoom = Instantiate(rooms[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
                         roomToShop = false;
-                        
+                        rightDoor.GetComponent<DoorController>().canUse = true;
+                        leftDoor.GetComponent<DoorController>().canUse = true;
                     }
                     else
                     {
-                        if (enemyGroundCount < enemiesSueloPositions.Length - 1)
-                        {
-                            enemyGroundCount++;
-                        }
-                        if (enemyAirCount < enemiesAirePositions.Length - 1)
-                        {
-                            enemyAirCount++;
-                        }
                         randomRoomArrPos = Random.Range(0, roomDoors.Count);
                         currentLeftRoom = Instantiate(roomDoors[randomRoomArrPos], rightPoint, Quaternion.identity, transform);
                         roomToShop = true;
@@ -202,18 +232,12 @@ public class ScenaryController : MonoBehaviour
                         randomRoomArrPos = Random.Range(0, rooms.Count);
                         currentRightRoom = Instantiate(rooms[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
                         roomToShop = false;
-                       
+                        rightDoor.GetComponent<DoorController>().canUse = true;
+                        leftDoor.GetComponent<DoorController>().canUse = true;
                     }
                     else
                     {
-                        if (enemyGroundCount < enemiesSueloPositions.Length - 1)
-                        {
-                            enemyGroundCount++;
-                        }
-                        if (enemyAirCount < enemiesAirePositions.Length - 1)
-                        {
-                            enemyAirCount++;
-                        }
+                        
                         randomRoomArrPos = Random.Range(0, roomDoors.Count);
                         currentRightRoom = Instantiate(roomDoors[randomRoomArrPos], leftPoint, Quaternion.identity, transform);
                         roomToShop = true;

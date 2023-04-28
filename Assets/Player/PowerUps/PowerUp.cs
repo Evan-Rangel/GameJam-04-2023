@@ -6,7 +6,14 @@ public class PowerUp : MonoBehaviour
 {
     //Hacemos referencia al Script que aplica los power Ups
     public PowerUpsEffects powerupEffect;
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void ApllyBuffEffect( GameObject _player)
+    {
+        powerupEffect.Apply(_player.gameObject);
+        Destroy(gameObject);
+    }
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -15,5 +22,5 @@ public class PowerUp : MonoBehaviour
             //Si lo toca lo destruya
             Destroy(gameObject);           
         }       
-    }
+    }*/
 }

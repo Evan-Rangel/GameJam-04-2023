@@ -132,7 +132,7 @@ MonoBehaviour:
   bullet: {fileID: 4624398093183693953, guid: bf6011e8f109bff48b62374d6c9a9673, type: 3}
   bulletCadence: 0.8
   bulletDamage: 1
-  health: 20
+  health: 5
   animator: {fileID: 0}
   isEnemy01: 1
 --- !u!50 &412849281567846120

@@ -10,11 +10,15 @@ public class Items : MonoBehaviour
     void Start()
     {
         //Agregar items al diccionario
-        items.Add("Torpe2", 40);
-        items.Add("Manzana", 5);
-        items.Add("Lanza Webos", 30);
-        items.Add("Estrella", 500);
-        items.Add("Prochevo", 1);
+        items.Add("Big Cannon", 75);
+        items.Add("Damage Buff", 20);
+        items.Add("Health Buff", 20);
+        items.Add("Max Health Buff", 30);
+        items.Add("ShotGun", 50);
+        items.Add("Speed Buff", 30);
+        items.Add("Star", 50);
+
+
     }
 
     // Update is called once per frame
