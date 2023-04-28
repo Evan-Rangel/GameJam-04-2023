@@ -7,6 +7,7 @@ public class MenuOpciones : MonoBehaviour
 {
 
     [SerializeField] private AudioMixer audioMixer;
+    public Animator transition;
     public void PantallaCompleta(bool pantallaCompleta)
     {
         Screen.fullScreen = pantallaCompleta;

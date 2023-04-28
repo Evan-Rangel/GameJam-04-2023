@@ -5,13 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
+    public Animator transition;
     public void Jugar()
     {
-        SceneManager.LoadScene("GameScene");
+        StartCoroutine(Fade());
     }
 
     public void Salir()
     {
         Application.Quit();
+    }
+
+    IEnumerator Fade()
+    {
+        transition.SetTrigger("Fade");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("GameScene");
     }
 }
