@@ -27,7 +27,8 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] List<MovDirection> movDir;
     [SerializeField] float vel;
-    [SerializeField] float time;
+    [SerializeField] float movTime;
+
     [SerializeField] int currentMovDir = 0;
 
     [SerializeField, Range(1, 30)] int projectilesPerWave;
@@ -50,12 +51,14 @@ public class EnemyController : MonoBehaviour
     new Vector2(-1,-1).normalized,
     new Vector2(1,-1).normalized
     };
-    
-    
+
+
+    GameObject player;
     
     
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -64,16 +67,75 @@ public class EnemyController : MonoBehaviour
         switch (movType)
         {
             case MovType.CUSTOM:
+                Movement();
+                Attack();
                 break;
             case MovType.FOLLOW_PLAYER:
+                AttackPlayer(); 
+                MovementToPlayer();
                 break;
         }
-        Movement();
-        Attack();
     }
+
+    private void Update()
+    {
+        if (movType== MovType.FOLLOW_PLAYER)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left*5);
+
+            Debug.DrawRay(transform.position, Vector2.left*2, Color.white);
+            if (hit.transform.CompareTag("Puerta") && hit.distance < 2)
+            {
+                Debug.Log("puerta izquierda");
+                rb.velocity = directions[2] * vel;
+            }
+
+            RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector2.right*5);
+
+            if (hit2.transform.CompareTag("Puerta") && hit2.distance < 2)
+            {
+                Debug.Log("puerta derecha");
+
+                rb.velocity = directions[3] * vel;
+            }
+        }
+    }
+
+    void AttackPlayer()
+    {
+        Vector2 dirToPlayer = (player.transform.position - transform.position).normalized;
+        GameObject bulletTemp = Instantiate(bullet, transform.position, Quaternion.identity);
+        bulletTemp.GetComponent<Rigidbody2D>().velocity = dirToPlayer * bulletSpeed;
+        StartCoroutine(NextAttackToPlayer());
+
+    }
+
+    void MovementToPlayer()
+    {
+        if (Vector2.Distance(player.transform.position , transform.position)>3)
+        {
+            if (player.transform.position.x < transform.position.x)
+            {
+                rb.velocity = directions[3] * vel;
+            }
+            else
+            {
+                rb.velocity = directions[2] * vel;
+            }
+        }
+        
+        StartCoroutine (NextMovToPlayer());
+    }
+
+    IEnumerator NextMovToPlayer()
+    {
+        yield return new WaitForSeconds(movTime);
+        MovementToPlayer();
+    }
+
+
     void Movement()
     {
-        Debug.Log(directions[(int)movDir[currentMovDir]]    );
         rb.velocity = directions[(int)movDir[currentMovDir]]*vel;
         StartCoroutine(NextMovement());
     }
@@ -108,7 +170,7 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator NextMovement()
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(movTime);
         if (currentMovDir < movDir.Count-1)
         {
             currentMovDir++;
@@ -119,13 +181,16 @@ public class EnemyController : MonoBehaviour
         }
         Movement();
     }
+    IEnumerator NextAttackToPlayer()
+    {
+        yield return new WaitForSeconds(bulletCadence);
+        AttackPlayer();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("PlayerBullet"))
         {
-            Debug.Log(collision.gameObject.GetComponent<DisparoMochila>().GetDamage);
             health -= collision.gameObject.GetComponent<DisparoMochila>().GetDamage;
-
             if (health<=0)
             {
                 Destroy(gameObject);
