@@ -12,12 +12,15 @@ public class BossFight : MonoBehaviour
     public int ataquesBrazos;
     public int ataquesCabeza;
 
+    public int random;
+
     private void Start()
     {
         partes[0].GetComponent<CircleCollider2D>().enabled = false;
         partes[1].GetComponent<CircleCollider2D>().enabled = false;
         partes[2].GetComponent<CircleCollider2D>().enabled = false;
         StartCoroutine(EsperarIntroduccion());
+        ataquesBrazos = 3;
     }
 
     private void Update()
@@ -31,45 +34,54 @@ public class BossFight : MonoBehaviour
 
     private void Fase1()
     {
+        ataquesBrazos = random;
         if (ataquesBrazos == 1)
         {
             partes[0].GetComponent<Animator>().SetBool("Atk1", true);
             partes[1].GetComponent<Animator>().SetBool("Atk1", true);
+            StartCoroutine(Fase1ATK1());
         }
         else if (ataquesBrazos == 2)
         {
             partes[0].GetComponent<Animator>().SetBool("Atk2", true);
             //Corrutina
             StartCoroutine(primeroUnBrazoIzq());
+            StartCoroutine(Fase1ATK2());
         }
-        else
+        else if (ataquesBrazos == 3)
         {
             partes[0].GetComponent<Animator>().SetBool("Atk1", false);
             partes[0].GetComponent<Animator>().SetBool("Atk2", false);
+            StartCoroutine(Fase1ATK3());
         }
     }
 
     private void Fase2()
     {
+        ataquesCabeza = random;
+
         /*
         if (partes[0].GetComponent<EnemyController>().Health <= 0 && partes[1].GetComponent<EnemyController>().Health <= 0)
         {
             
         }
         */
-
+        partes[2].GetComponent<CircleCollider2D>().enabled = true;
         if (ataquesCabeza == 1)
         {
-            partes[2].GetComponent<Animator>().SetBool("AtaqueIzq", true);
+            partes[2].GetComponent<Animator>().SetBool("AtaqueIzqDer", true);
+            StartCoroutine(Fase2ATK1());
         }
         else if (ataquesCabeza == 2)
         {
-            partes[2].GetComponent<Animator>().SetBool("AtaqueDer", true);
+            partes[2].GetComponent<Animator>().SetBool("AtaqueAbajo", true);
+            StartCoroutine(Fase2ATK2());
         }
         else
         {
             partes[2].GetComponent<Animator>().SetBool("AtaqueIzq", false);
             partes[2].GetComponent<Animator>().SetBool("AtaqueDer", false);
+            StartCoroutine(Fase2ATK3());
         }
     }
 
@@ -108,13 +120,45 @@ public class BossFight : MonoBehaviour
     IEnumerator EsperarIntroduccion()
     {
         yield return new WaitForSeconds(10);
+        partes[0].GetComponent<CircleCollider2D>().enabled = true;
         partes[1].GetComponent<CircleCollider2D>().enabled = true;
-        partes[2].GetComponent<CircleCollider2D>().enabled = true;
     }
 
     IEnumerator morirBoss()
     {
         yield return new WaitForSeconds(4);
         partes[2].GetComponent<Animator>().SetBool("Morir", true);
+    }
+
+    IEnumerator Fase1ATK1()
+    {
+        yield return new WaitForSeconds(7);
+        random = Random.Range(1, 4);
+    }
+    IEnumerator Fase1ATK2()
+    {
+        yield return new WaitForSeconds(5);
+        random = Random.Range(1, 4);
+    }
+    IEnumerator Fase1ATK3()
+    {       
+        yield return new WaitForSeconds(10);
+        random = Random.Range(1, 4);
+    }
+
+    IEnumerator Fase2ATK1()
+    {
+        yield return new WaitForSeconds(7);
+        random = Random.Range(1, 4);
+    }
+    IEnumerator Fase2ATK2()
+    {
+        yield return new WaitForSeconds(30);
+        random = Random.Range(1, 4);
+    }
+    IEnumerator Fase2ATK3()
+    {
+        yield return new WaitForSeconds(11);
+        random = Random.Range(1, 4);
     }
 }
