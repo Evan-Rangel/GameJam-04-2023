@@ -1,0 +1,608 @@
+fileFormatVersion: 2
+guid: 529af749d8be952478de04c384bf6500
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_0
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 3574
+        width: 600
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a686c6665ec8094ebe843cf21c8db54
+      internalID: -1389900150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3573
+        width: 579
+        height: 579
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebaf35d77d4eb74488b1b932a5b361f
+      internalID: -2044815570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2939
+        width: 573
+        height: 581
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5fdfaff782e2c409d299319a57ecca
+      internalID: 887218036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2322
+        width: 575
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63fa1b631471b864787d8d48b19ab01b
+      internalID: -1876839297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1684
+        width: 574
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a82bae2e87a2ac47a1fe5c1ca60d8bf
+      internalID: 542869618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1419
+        width: 291
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8167ecd03b38ac48a4448f99edc62f9
+      internalID: 308128851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_6
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1152
+        width: 154
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f11a4ae2d03534c970be7043d60d78
+      internalID: -318751242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_7
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 965
+        width: 67
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69d181188f79a6499af1e0e8698cbb1
+      internalID: -907891333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_8
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 2959
+        width: 602
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce78a709ff5712846a341b7e36b45399
+      internalID: -1578529554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_9
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 2362
+        width: 603
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883cbaf97901f384899efda0ae249be8
+      internalID: -1268590843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_10
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1749
+        width: 604
+        height: 577
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2656b311aed20e24cb6aa95cb18e0e9d
+      internalID: 1861550695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_11
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 1396
+        width: 246
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfba8336ab1c234db6f7775c654e0f3
+      internalID: -801388265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1219
+        width: 113
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42abd839d91ed95469b473a0bc75bcff
+      internalID: 963408140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_13
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1008
+        width: 59
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907d9b224752807409de89dacd3b6014
+      internalID: -800367451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_14
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 3368
+        width: 1204
+        height: 784
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5369d80a7eab51144ab70c28863d8659
+      internalID: 337078362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_15
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 2542
+        width: 1203
+        height: 819
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232063e1610a2c249a0140a7e0941df8
+      internalID: 1513823759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_16
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 1696
+        width: 1206
+        height: 834
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02a9922fb2e5354dad0421bc2d02abd
+      internalID: 411302606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_17
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 780
+        width: 1381
+        height: 883
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38043030dbfb5d4cbcd7dcc0273416a
+      internalID: 184911189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_18
+      rect:
+        serializedVersion: 2
+        x: 3225
+        y: 3275
+        width: 1384
+        height: 877
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1d1bdab1f41ac489adb5702f791a0e
+      internalID: -2111681533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_19
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 2359
+        width: 1382
+        height: 875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7a32a20100c964cbeec28ab00bfd75
+      internalID: -404631964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_20
+      rect:
+        serializedVersion: 2
+        x: 3338
+        y: 1436
+        width: 1383
+        height: 875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b11be8cc119a6540a2820dc039b989d
+      internalID: 1233990812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_21
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 512
+        width: 1384
+        height: 875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc8a1d7d7bbe4c42a385271397dfc31
+      internalID: -1542615733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_3: -291642186
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_8: 1727849258
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_1: 1703187908
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_20: 123383836
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_0: -93879704
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_14: 62048236
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_11: 1860494576
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_16: 613850327
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_6: 181884629
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_19: 1924402805
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_12: -1132710709
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_4: 1550787597
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_7: -1140376898
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_9: -1565025874
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_18: -1086651520
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_17: -183815068
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_10: -1678029369
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_15: 432722484
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_13: -971285649
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_2: 316476392
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_5: 383809049
+      final booossss sana ,i dolor fg MUERTE ESAFG SPRITE_21: 167313011
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
