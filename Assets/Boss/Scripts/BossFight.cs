@@ -5,17 +5,20 @@ using UnityEngine;
 public class BossFight : MonoBehaviour
 {
     [SerializeField] private GameObject[] partes;
-
+    [SerializeField] GameObject projectile;
     public bool fase1;
     public bool fase2;
 
     public int ataquesBrazos;
     public int ataquesCabeza;
-
+    [SerializeField] float bulletSpeed;
     public int random;
 
+    [SerializeField]float temp;
+    float tempTot;
     private void Start()
     {
+        tempTot = temp;
         partes[0].GetComponent<CircleCollider2D>().enabled = false;
         partes[1].GetComponent<CircleCollider2D>().enabled = false;
         partes[2].GetComponent<CircleCollider2D>().enabled = false;
@@ -56,8 +59,40 @@ public class BossFight : MonoBehaviour
             partes[0].GetComponent<Animator>().SetBool("Atk1", false);
             partes[0].GetComponent<Animator>().SetBool("Atk2", false);
             StartCoroutine(Fase1ATK3());
+
+
+            tempTot -= Time.deltaTime;
+            if (tempTot<=0)
+            {
+                BulletAttack(partes[1].transform);
+                BulletAttack(partes[2].transform);
+                tempTot = temp;
+            }
+            
+            
         }
     }
+
+    void BulletAttack(Transform _pos)
+    {
+        float angle = 140;
+        float angleStep = 360 / 18;
+        Vector2 startPos = _pos.position;
+
+
+        for (int i = 0; i < 4; i++)
+        {
+            float DirXPos = startPos.x + Mathf.Sin((angle * Mathf.PI) / 180);
+            float DirYPos = startPos.y + Mathf.Cos((angle * Mathf.PI) / 180);
+            Vector2 dir = new Vector2(DirXPos, DirYPos);
+            Vector2 movDir = (dir - startPos).normalized * bulletSpeed;
+            GameObject bulletTemp = Instantiate(projectile, startPos, Quaternion.identity);
+            bulletTemp.GetComponent<Rigidbody2D>().velocity = movDir * bulletSpeed;
+            angle += angleStep;
+        }
+    }
+
+
 
     private void Fase2()
     {

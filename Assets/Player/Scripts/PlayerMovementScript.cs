@@ -35,6 +35,8 @@ public class PlayerMovementScript : MonoBehaviour
     bool canMove=true;
     bool frstCheck = false;
 
+    [SerializeField] Animator animator;
+
     public AudioSource Ruidos;
     public AudioSource Pasos;
     public AudioClip Jump_Start;
@@ -56,6 +58,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
         //currentHealth = maxHealth;
         shield = false;
         jumpT = jumpTime;
@@ -102,6 +105,29 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 rb.gravityScale = fallGravityScale;
             }
+        }
+
+        if (rb.velocity.x!=0)
+        {
+            animator.SetBool("Walk",true);
+        }
+        else
+        {
+            animator.SetBool("Walk", false);
+
+        }
+
+
+        if (rb.velocity.x>0)
+        {
+            transform.localScale = new Vector3(0.5f,0.5f,1);
+            //GetComponent<SpriteRenderer>().flipX = false;
+        }
+        if (rb.velocity.x<0)
+        {
+            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
+
+            //GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
