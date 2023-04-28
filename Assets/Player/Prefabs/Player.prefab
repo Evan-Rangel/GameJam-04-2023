@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 608151331778251600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.679, y: -0.103, z: 0}
-  m_LocalScale: {x: 6, y: 5.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9010174946831583735}
@@ -504,6 +504,7 @@ MonoBehaviour:
   fallGravityScale: 4
   jumpTime: 0.3
   stars: 0
+  animator: {fileID: 0}
   Ruidos: {fileID: 3343913874755289352}
   Pasos: {fileID: 1854757937438368124}
   Jump_Start: {fileID: 8300000, guid: b88da014255893b4b991547c9d1132c2, type: 3}

@@ -116,12 +116,12 @@ public class EnemyController : MonoBehaviour
         {
             animator.SetBool("Walking", false);
         }
-        if (player.transform.position.x < transform.position.x && GetComponent<SpriteRenderer>().flipX)
+        if (player.transform.position.x < transform.position.x )
         {
             GetComponent<SpriteRenderer>().flipX = false;
 
         }
-        if (player.transform.position.x > transform.position.x && !GetComponent<SpriteRenderer>().flipX)
+        if (player.transform.position.x > transform.position.x )
         {
             GetComponent<SpriteRenderer>().flipX = true;
 
@@ -133,6 +133,8 @@ public class EnemyController : MonoBehaviour
     {
         Vector2 dirToPlayer = (player.transform.position - transform.position).normalized;
         GameObject bulletTemp = Instantiate(bullet, transform.position, Quaternion.identity);
+        bulletTemp.GetComponent<BulletEnemyController>().damage = bulletDamage;
+
         bulletTemp.GetComponent<Rigidbody2D>().velocity = dirToPlayer * bulletSpeed;
         StartCoroutine(NextAttackToPlayer());
 
@@ -184,6 +186,7 @@ public class EnemyController : MonoBehaviour
             Vector2 dir = new Vector2(DirXPos, DirYPos);
             Vector2 movDir = (dir - startPos).normalized * bulletSpeed;
             GameObject bulletTemp = Instantiate(bullet, startPos, Quaternion.identity);
+            bulletTemp.GetComponent<BulletEnemyController>().damage = bulletDamage;
             bulletTemp.GetComponent<Rigidbody2D>().velocity = movDir*bulletSpeed;
             angle += angleStep;
         }
