@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527be1bf2439db64fae898cb4f942769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmount: 30
-  minAmount: 10
+  maxAmount: 200
+  minAmount: 199
   openSprite: {fileID: -648170945, guid: c659a1929f2395443bea83c9781b4e0d, type: 3}

@@ -44,7 +44,7 @@ public class PlayerMovementScript : MonoBehaviour
     public AudioClip Damage_Big;
     public AudioClip Damage_Med;
     public AudioClip Damage_Sm;
-
+    bool godmode = false;
 
     public void SetCanMove(bool _canMove)
     {
@@ -67,7 +67,10 @@ public class PlayerMovementScript : MonoBehaviour
     }
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            godmode = true;
+        }
         if (canMove)
         {
 
@@ -167,25 +170,28 @@ public class PlayerMovementScript : MonoBehaviour
                 Ruidos.PlayOneShot(Damage_Big);
                 break;
         }
+        if (!godmode)
+        {
 
-        //Si el escudo esta activo no recibe daño y se apaga
-        if (shield == true)
-        {
-            shield = false;
-        }
-        else
-        {
-            currentHealth -= amount;
-            Debug.Log(currentHealth);
-        }
-        if (currentHealth <= 0)
-        {
-            //Moriste proo
-            //Play Death animation
-            //Show GameOver Screen
+            //Si el escudo esta activo no recibe daño y se apaga
+            if (shield == true)
+            {
+                shield = false;
+            }
+            else
+            {
+                currentHealth -= amount;
+                Debug.Log(currentHealth);
+            }
+            if (currentHealth <= 0)
+            {
+                //Moriste proo
+                //Play Death animation
+                //Show GameOver Screen
             
-            menuPausa.Morir();
-            StartCoroutine(TimingDeath());
+                menuPausa.Morir();
+                StartCoroutine(TimingDeath());
+            }
         }
         UpdateHealth();
     }
